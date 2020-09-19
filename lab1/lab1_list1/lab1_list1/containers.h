@@ -9,7 +9,7 @@ using namespace std;
 template <typename T>
 class Stack {
 public:
-	Stack(int = 30); 
+	Stack(int = 30);
 	~Stack();
 
 	void push(const T&);

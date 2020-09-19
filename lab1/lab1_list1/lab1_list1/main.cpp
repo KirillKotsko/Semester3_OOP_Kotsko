@@ -6,9 +6,9 @@
 using namespace std;
 
 int main() {
-	/*TestRunner tr;
+	TestRunner tr;
 	RUN_TEST(tr, TestStack);
 	RUN_TEST(tr, TestQueue);
-	RUN_TEST(tr, TestDeque);*/
+	RUN_TEST(tr, TestDeque);
 	return 0;
 }
