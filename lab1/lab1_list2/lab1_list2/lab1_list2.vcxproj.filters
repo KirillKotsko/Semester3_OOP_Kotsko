@@ -21,12 +21,18 @@
     <ClCompile Include="date.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="test.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
     <ClInclude Include="unit_test_framework.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="test.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
   </ItemGroup>
