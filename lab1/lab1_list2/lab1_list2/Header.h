@@ -83,6 +83,8 @@ ostream& operator<<(ostream& os, const Date& date);
 ostream& operator<<(ostream& os, const Difference_between_date& date);
 bool operator<(const Date& lhs, const Date& rhs);
 bool operator>(const Date& lhs, const Date& rhs);
+bool operator==(const Date& lhs, const Date& rhs);
+bool operator==(const Difference_between_date& lhs, const Difference_between_date& rhs);
 Date operator+(Date date, Difference_between_date plus);
 Date operator-(Date date, Difference_between_date minus);
 Difference_between_date operator-(Date date1, Date date2);

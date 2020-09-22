@@ -84,6 +84,16 @@ bool operator>(const Date& lhs, const Date& rhs) {
 		vector<int>{rhs.year, rhs.month, rhs.day, rhs.hour, rhs.minute, rhs.second};
 }
 
+bool operator==(const Date& lhs, const Date& rhs) {
+	return vector<int>{lhs.year, lhs.month, lhs.day, lhs.hour, lhs.minute, lhs.second} ==
+		vector<int>{rhs.year, rhs.month, rhs.day, rhs.hour, rhs.minute, rhs.second};
+}
+
+bool operator==(const Difference_between_date& lhs, const Difference_between_date& rhs) {
+	return vector<int>{lhs.days, lhs.hour, lhs.minute, lhs.seconds} ==
+		vector<int>{rhs.days, rhs.hour, rhs.minute, rhs.seconds};
+}
+
 Difference_between_date operator-(Date date1, Date date2) {
 	Difference_between_date result;
 
