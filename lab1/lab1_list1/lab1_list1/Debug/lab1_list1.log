@@ -10,10 +10,10 @@ D:\c++\Semester3_Kotsko\lab1\lab1_list1\lab1_list1\unit_test_framework.h(57,1): 
 D:\c++\Semester3_Kotsko\lab1\lab1_list1\lab1_list1\unit_test_framework.h(57,1): warning C4805:             U=int
 D:\c++\Semester3_Kotsko\lab1\lab1_list1\lab1_list1\unit_test_framework.h(57,1): warning C4805:         ]
   Создание кода...
-D:\c++\Semester3_Kotsko\lab1\lab1_list1\lab1_list1\test.cpp(8): message :  выполняется компиляция ссылки на экземпляр шаблон функции "void AssertEqual<bool,int>(const T &,const U &,const std::string &)"
-D:\c++\Semester3_Kotsko\lab1\lab1_list1\lab1_list1\test.cpp(8): message :         with
-D:\c++\Semester3_Kotsko\lab1\lab1_list1\lab1_list1\test.cpp(8): message :         [
-D:\c++\Semester3_Kotsko\lab1\lab1_list1\lab1_list1\test.cpp(8): message :             T=bool,
-D:\c++\Semester3_Kotsko\lab1\lab1_list1\lab1_list1\test.cpp(8): message :             U=int
-D:\c++\Semester3_Kotsko\lab1\lab1_list1\lab1_list1\test.cpp(8): message :         ]
+D:\c++\Semester3_Kotsko\lab1\lab1_list1\lab1_list1\test.cpp(9): message :  выполняется компиляция ссылки на экземпляр шаблон функции "void AssertEqual<bool,int>(const T &,const U &,const std::string &)"
+D:\c++\Semester3_Kotsko\lab1\lab1_list1\lab1_list1\test.cpp(9): message :         with
+D:\c++\Semester3_Kotsko\lab1\lab1_list1\lab1_list1\test.cpp(9): message :         [
+D:\c++\Semester3_Kotsko\lab1\lab1_list1\lab1_list1\test.cpp(9): message :             T=bool,
+D:\c++\Semester3_Kotsko\lab1\lab1_list1\lab1_list1\test.cpp(9): message :             U=int
+D:\c++\Semester3_Kotsko\lab1\lab1_list1\lab1_list1\test.cpp(9): message :         ]
   lab1_list1.vcxproj -> D:\c++\Semester3_Kotsko\lab1\lab1_list1\Debug\lab1_list1.exe

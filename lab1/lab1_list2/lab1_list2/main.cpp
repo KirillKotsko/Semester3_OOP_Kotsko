@@ -12,6 +12,7 @@ int main() {
 	RUN_TEST(tr, TestWeekDay);
 	RUN_TEST(tr, TestWeekInMonth);
 	RUN_TEST(tr, TestWeekInYear);
+	RUN_TEST(tr, TestTimeManagmentInContainers);
 
 	system("pause");
 	bool work = true;

@@ -547,6 +547,7 @@ void Time_managment::alternative_insert_of_date(int num_of_date) {
 	tmp.days -= special_code_of_weekday;
 	if (tmp.days % 7 == 0) num_of_weekday++;
 	else if (7 - (tmp.days % 7) < special_code_of_weekday) num_of_weekday++;
+	if (num_of_weekday == 0) num_of_weekday = 1;
 
 	string numbers_in_words[5] = { "first", "second", "third", "fourth", "fifth" };
 	cout << numbers_in_words[num_of_weekday - 1] << " " << WEEK_DAY[get_weekday_of_date(num_of_date)] << " of "

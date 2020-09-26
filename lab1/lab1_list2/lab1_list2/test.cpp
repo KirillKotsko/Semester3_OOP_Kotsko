@@ -99,3 +99,71 @@ void TestWeekInYear() {
 	ASSERT_EQUAL(test.week_in_year(1), 22);
 }
 
+void TestTimeManagmentInContainers() {
+	{
+		Stack<Time_managment> test;
+		ASSERT_EQUAL(test.max_size(), 30);
+		ASSERT_EQUAL(test.size(), 0);
+		ASSERT_EQUAL(test.empty(), 1);
+		Time_managment a;
+		a.set_date(Date({ 5,5,2020,12,0,0 }), 1);
+		a.set_date(Date({ 6,12,2020,13,59,11 }), 2);
+		test.push_back(a);
+		ASSERT_EQUAL(test.size(), 1);
+		ASSERT_EQUAL(test.empty(), 0);
+		Time_managment b = test.peek();
+		ASSERT_EQUAL(b.get_date(1), Date({ 5,5,2020,12,0,0 }));
+		ASSERT_EQUAL(b.get_date(2), Date({ 6,12,2020,13,59,11 }));
+		ASSERT_EQUAL(test.size(), 1);
+		ASSERT_EQUAL(test.empty(), 0);
+		Time_managment c = test.pop_back();
+		ASSERT_EQUAL(c.get_date(1), Date({ 5,5,2020,12,0,0 }));
+		ASSERT_EQUAL(c.get_date(2), Date({ 6,12,2020,13,59,11 }));
+		ASSERT_EQUAL(test.size(), 0);
+		ASSERT_EQUAL(test.empty(), 1);
+	}
+	{
+		Queue<Time_managment> test;
+		ASSERT_EQUAL(test.max_size(), 30);
+		ASSERT_EQUAL(test.size(), 0);
+		ASSERT_EQUAL(test.empty(), 1);
+		Time_managment a;
+		a.set_date(Date({ 5,5,2020,12,0,0 }), 1);
+		a.set_date(Date({ 6,12,2020,13,59,11 }), 2);
+		test.push_back(a);
+		ASSERT_EQUAL(test.size(), 1);
+		ASSERT_EQUAL(test.empty(), 0);
+		Time_managment b = test.front();
+		ASSERT_EQUAL(b.get_date(1), Date({ 5,5,2020,12,0,0 }));
+		ASSERT_EQUAL(b.get_date(2), Date({ 6,12,2020,13,59,11 }));
+		ASSERT_EQUAL(test.size(), 1);
+		ASSERT_EQUAL(test.empty(), 0);
+		Time_managment c = test.pop_front();
+		ASSERT_EQUAL(c.get_date(1), Date({ 5,5,2020,12,0,0 }));
+		ASSERT_EQUAL(c.get_date(2), Date({ 6,12,2020,13,59,11 }));
+		ASSERT_EQUAL(test.size(), 0);
+		ASSERT_EQUAL(test.empty(), 1);
+	}
+	{
+		Deque<Time_managment> test;
+		ASSERT_EQUAL(test.max_size(), 30);
+		ASSERT_EQUAL(test.size(), 0);
+		ASSERT_EQUAL(test.empty(), 1);
+		Time_managment a;
+		a.set_date(Date({ 5,5,2020,12,0,0 }), 1);
+		a.set_date(Date({ 6,12,2020,13,59,11 }), 2);
+		test.push_front(a);
+		ASSERT_EQUAL(test.size(), 1);
+		ASSERT_EQUAL(test.empty(), 0);
+		Time_managment b = test.front();
+		ASSERT_EQUAL(b.get_date(1), Date({ 5,5,2020,12,0,0 }));
+		ASSERT_EQUAL(b.get_date(2), Date({ 6,12,2020,13,59,11 }));
+		ASSERT_EQUAL(test.size(), 1);
+		ASSERT_EQUAL(test.empty(), 0);
+		Time_managment c = test.pop_front();
+		ASSERT_EQUAL(c.get_date(1), Date({ 5,5,2020,12,0,0 }));
+		ASSERT_EQUAL(c.get_date(2), Date({ 6,12,2020,13,59,11 }));
+		ASSERT_EQUAL(test.size(), 0);
+		ASSERT_EQUAL(test.empty(), 1);
+	}
+}

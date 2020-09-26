@@ -35,5 +35,8 @@
     <ClInclude Include="test.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
+    <ClInclude Include="containers.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
