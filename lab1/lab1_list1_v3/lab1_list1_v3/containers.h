@@ -87,3 +87,44 @@ const T& Stack<T>::peek()
 	return data[current_size - 1];
 }
 
+// 2. Πεΰλ³ηΰφ³ÿ queue
+
+template <typename T>
+class Queue : virtual public Container<T> {
+public:
+	Queue(int a = 30) : Container<T>(a) {}
+
+	T pop_front();
+	const T& front();
+	const T& back();
+protected:
+	Container<T>::data;
+	Container<T>::current_size;
+	Container<T>::maxsize;
+};
+
+template <typename T>
+const T& Queue<T>::front()
+{
+	if (current_size == 0) throw exception("Container is empty!!!");
+	return data[0];
+}
+
+template <typename T>
+const T& Queue<T>::back()
+{
+	if (current_size == 0) throw exception("Container is empty!!!");
+	return data[current_size - 1];
+}
+
+template <typename T>
+T Queue<T>::pop_front()
+{
+	if (current_size == 0) throw exception("Container is empty!!!");
+	T element = data[0];
+	for (int i = 0; i < current_size - 1; i++) {
+		data[i] = data[i + 1];
+	}
+	current_size--;
+	return element;
+}
