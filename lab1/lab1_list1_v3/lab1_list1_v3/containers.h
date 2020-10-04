@@ -128,3 +128,26 @@ T Queue<T>::pop_front()
 	current_size--;
 	return element;
 }
+
+// 3. Πεΰλ³ηΰφ³ÿ deque
+
+template <typename T>
+class Deque : public Stack<T>, public Queue<T> {
+public:
+	Deque(int a = 30) : Container<T>(a) {}
+
+	void push_front(const T&);
+protected:
+	Container<T>::data;
+	Container<T>::current_size;
+	Container<T>::maxsize;
+};
+
+template <typename T>
+void Deque<T>::push_front(const T& value)
+{
+	if (current_size == maxsize) throw exception("Container is full!!!");
+	for (int i = current_size; i > 0; i--) data[i] = data[i - 1];
+	current_size++;
+	data[0] = value;
+}
