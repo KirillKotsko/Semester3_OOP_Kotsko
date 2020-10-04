@@ -58,4 +58,32 @@ void Container<T>::push_back(const T& value)
 	data[current_size++] = value;
 }
 
+//1. Πεΰλ³ηΰφ³ÿ stack
+
+template <typename T>
+class Stack : virtual public Container<T> {
+public:
+	Stack(int a = 30) : Container<T>(a) {}
+
+	T pop_back();
+	const T& peek();
+protected:
+	Container<T>::data;
+	Container<T>::current_size;
+	Container<T>::maxsize;
+};
+
+template <typename T>
+T Stack<T>::pop_back()
+{
+	if (current_size == 0) throw exception("Container is empty!!!");
+	return data[--current_size];
+}
+
+template <typename T>
+const T& Stack<T>::peek()
+{
+	if (current_size == 0) throw exception("Container is empty!!!");
+	return data[current_size - 1];
+}
 
