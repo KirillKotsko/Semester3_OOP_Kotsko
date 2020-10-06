@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Исходные файлы">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Файлы заголовков">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Файлы ресурсов">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="CppFiles">
+      <UniqueIdentifier>{720ba3fb-6950-4cc7-84cf-13130d55d82e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HeaderFiles">
+      <UniqueIdentifier>{613d9a78-7205-48a0-995e-351657eb2f6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HeaderFiles\Containers">
+      <UniqueIdentifier>{e078647e-bdbc-45ed-91f3-1507a907e592}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HeaderFiles\Date">
+      <UniqueIdentifier>{0014739c-9717-4958-9823-b4fffbff293f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HeaderFiles\Demonstration">
+      <UniqueIdentifier>{6ebe5b50-c24a-4c4e-b809-41662844b158}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="CppFiles\Demonstration.cpp">
+      <Filter>CppFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="CppFiles\Overload.cpp">
+      <Filter>CppFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="CppFiles\Time_is_now.cpp">
+      <Filter>CppFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="CppFiles\Time_managment.cpp">
+      <Filter>CppFiles</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="HeaderFiles\Containers\Containers.h">
+      <Filter>HeaderFiles\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="HeaderFiles\Containers\Stack.h">
+      <Filter>HeaderFiles\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="HeaderFiles\Containers\Queue.h">
+      <Filter>HeaderFiles\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="HeaderFiles\Containers\Deque.h">
+      <Filter>HeaderFiles\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="HeaderFiles\Date\Date.h">
+      <Filter>HeaderFiles\Date</Filter>
+    </ClInclude>
+    <ClInclude Include="HeaderFiles\Demonstration\Demonstration.h">
+      <Filter>HeaderFiles\Demonstration</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

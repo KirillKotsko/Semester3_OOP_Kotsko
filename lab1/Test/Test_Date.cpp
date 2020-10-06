@@ -1,4 +1,4 @@
-#include "test.h"
+#include "../Test/Test.h"
 
 void TestDateMinusDate() {
 	Time_managment test({ 6, 8, 2020, 14, 55, 32 }, { 9, 2, 2019, 20, 33, 6 });

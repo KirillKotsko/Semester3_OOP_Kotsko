@@ -104,34 +104,3 @@ void Deque<T>::push_front(const T& value)
 	current_size++;
 	data[0] = value;
 }
-
-template <typename T>
-class Stack {
-public:
-	Stack(int a = 30) : stack(Deque<T>(a)) {}
-
-	T pop() { return stack.pop_back(); };
-	const T& peek() { return stack.back(); };
-	void push(const T& value) { stack.push_back(value); };
-	bool empty() { return stack.empty(); };
-	int max_size() const { return stack.max_size(); };
-	int size() const { return stack.size(); };
-private:
-	Deque<T> stack;
-};
-
-template <typename T>
-class Queue {
-public:
-	Queue(int a = 30) : queue(Deque<T>(a)) {}
-
-	void push(const T& value) { queue.push_back(value); };
-	bool empty() { return queue.empty(); };
-	int max_size() const { return queue.max_size(); };
-	int size() const { return queue.size(); };
-	T pop() { return queue.pop_front(); };
-	const T& front() { return queue.front(); };
-	const T& back() { return queue.back(); };
-private:
-	Deque<T> queue;
-};

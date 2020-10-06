@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{1B2121FE-57C8-410C-B975-BBF60D22AE5D}</ProjectGuid>
-    <RootNamespace>lab1list2v9</RootNamespace>
+    <ProjectGuid>{C496B637-EF1F-41EF-B99E-A476F6C11788}</ProjectGuid>
+    <RootNamespace>Test</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -123,16 +123,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="date.cpp" />
-    <ClCompile Include="demonstration.cpp" />
+    <ClCompile Include="..\lab1\CppFiles\Overload.cpp" />
+    <ClCompile Include="..\lab1\CppFiles\Time_is_now.cpp" />
+    <ClCompile Include="..\lab1\CppFiles\Time_managment.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="test.cpp" />
+    <ClCompile Include="Test_Containers.cpp" />
+    <ClCompile Include="Test_Date.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="containers.h" />
-    <ClInclude Include="date.h" />
-    <ClInclude Include="demonstration.h" />
-    <ClInclude Include="test.h" />
+    <ClInclude Include="Test.h" />
     <ClInclude Include="unit_test_framework.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -1,21 +1,10 @@
-#include "date.h"
-#include "unit_test_framework.h"
-#include "test.h"
-#include "demonstration.h"
+#include "../lab1/HeaderFiles/Containers/Containers.h"
+#include "../lab1/HeaderFiles/Date/Date.h"
+#include "../lab1/HeaderFiles/Demonstration/Demonstration.h"
 
 using namespace std;
 
 int main() {
-	TestRunner tr;
-	RUN_TEST(tr, TestDateMinusDate);
-	RUN_TEST(tr, TestDateAddDifference);
-	RUN_TEST(tr, TestDateMinusDifference);
-	RUN_TEST(tr, TestWeekDay);
-	RUN_TEST(tr, TestWeekInMonth);
-	RUN_TEST(tr, TestWeekInYear);
-	RUN_TEST(tr, TestTimeManagmentInContainers);
-	system("pause");
-
 	bool work = true;
 	Time_managment x;
 	while (work) {
@@ -126,6 +115,9 @@ int main() {
 			demonstration_mode_stack();
 			demonstration_mode_queue();
 			demonstration_mode_deque();
+			demonstration_stack();
+			demonstraation_queue();
+			demonstration_deque();
 
 			break;
 		}
