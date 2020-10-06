@@ -5,120 +5,87 @@
 using namespace std;
 
 template <typename T>
-class Container {
+class Deque {
 public:
-	Container(int = 30);
-	~Container();
+	Deque(int a = 30);
+	~Deque();
 
+	T pop_front();
+	const T& front();
+	const T& back();
+	T pop_back();
 	void push_back(const T&);
 	bool empty();
 	int max_size() const;
 	int size() const;
-protected:
+	void push_front(const T&);
+private:
 	T* data;
 	int current_size;
 	int maxsize;
 };
 
 template <typename T>
-Container<T>::Container(int size) : maxsize(size)
+Deque<T>::Deque(int size) : maxsize(size)
 {
 	current_size = 0;
 	data = new T[maxsize];
 }
 
 template <typename T>
-Container<T>::~Container()
+Deque<T>::~Deque()
 {
 	delete[] data;
 }
 
 template <typename T>
-bool Container<T>::empty()
+bool Deque<T>::empty()
 {
 	return (current_size == 0) ? true : false;
 }
 
 template <typename T>
-int Container<T>::size() const
+int Deque<T>::size() const
 {
 	return current_size;
 }
 
 template <typename T>
-int Container<T>::max_size() const
+int Deque<T>::max_size() const
 {
 	return maxsize;
 }
 
 template <typename T>
-void Container<T>::push_back(const T& value)
+void Deque<T>::push_back(const T& value)
 {
 	if (current_size == maxsize) throw exception("Container is full!!!");
 	data[current_size++] = value;
 }
 
-//1. Πεΰλ³ηΰφ³ÿ stack
-
 template <typename T>
-class Stack : virtual public Container<T> {
-public:
-	Stack(int a = 30) : Container<T>(a) {}
-
-	T pop_back();
-	const T& peek();
-protected:
-	Container<T>::data;
-	Container<T>::current_size;
-	Container<T>::maxsize;
-};
-
-template <typename T>
-T Stack<T>::pop_back()
+T Deque<T>::pop_back()
 {
 	if (current_size == 0) throw exception("Container is empty!!!");
 	return data[--current_size];
 }
 
 template <typename T>
-const T& Stack<T>::peek()
-{
-	if (current_size == 0) throw exception("Container is empty!!!");
-	return data[current_size - 1];
-}
-
-// 2. Πεΰλ³ηΰφ³ÿ queue
-
-template <typename T>
-class Queue : virtual public Container<T> {
-public:
-	Queue(int a = 30) : Container<T>(a) {}
-
-	T pop_front();
-	const T& front();
-	const T& back();
-protected:
-	Container<T>::data;
-	Container<T>::current_size;
-	Container<T>::maxsize;
-};
-
-template <typename T>
-const T& Queue<T>::front()
+const T& Deque<T>::front()
 {
 	if (current_size == 0) throw exception("Container is empty!!!");
 	return data[0];
 }
 
 template <typename T>
-const T& Queue<T>::back()
+const T& Deque<T>::back()
 {
 	if (current_size == 0) throw exception("Container is empty!!!");
 	return data[current_size - 1];
 }
 
 template <typename T>
-T Queue<T>::pop_front()
+T Deque<T>::pop_front()
 {
 	if (current_size == 0) throw exception("Container is empty!!!");
 	T element = data[0];
@@ -129,20 +96,6 @@ T Queue<T>::pop_front()
 	return element;
 }
 
-// 3. Πεΰλ³ηΰφ³ÿ deque
-
-template <typename T>
-class Deque : public Stack<T>, public Queue<T> {
-public:
-	Deque(int a = 30) : Container<T>(a) {}
-
-	void push_front(const T&);
-protected:
-	Container<T>::data;
-	Container<T>::current_size;
-	Container<T>::maxsize;
-};
-
 template <typename T>
 void Deque<T>::push_front(const T& value)
 {
@@ -151,3 +104,34 @@ void Deque<T>::push_front(const T& value)
 	current_size++;
 	data[0] = value;
 }
+
+template <typename T>
+class Stack {
+public:
+	Stack(int a = 30) : stack(Deque<T> (a)) {}
+
+	T pop() { return stack.pop_back(); };
+	const T& peek() { return stack.back(); };
+	void push(const T& value) { stack.push_back(value); };
+	bool empty() { return stack.empty(); };
+	int max_size() const { return stack.max_size(); };
+	int size() const { return stack.size(); };
+private:
+	Deque<T> stack;
+};
+
+template <typename T>
+class Queue{
+public:
+	Queue(int a = 30) : queue(Deque<T>(a)) {}
+
+	void push(const T& value) { queue.push_back(value); };
+	bool empty() { return queue.empty(); };
+	int max_size() const { return queue.max_size(); };
+	int size() const { return queue.size(); };
+	T pop() { return queue.pop_front(); };
+	const T& front() { return queue.front(); };
+	const T& back() { return queue.back(); };
+private:
+	Deque<T> queue;
+};
