@@ -69,6 +69,9 @@ public:
 	~Time_managment();
 
 	Difference_between_date get_difference();
+	Difference_between_date minus_for_dates(Date date1_, Date date2_);
+	Date date_plus_diff(Date date, Difference_between_date plus);
+	Date date_minus_diff(Date date, Difference_between_date minus);
 	void show_difference();
 	bool check_date(int num_of_date);
 	void set_date(const Date& a, int num_of_date);
