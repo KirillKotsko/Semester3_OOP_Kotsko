@@ -1,3 +1,9 @@
+/**
+*	@file Overload.cpp
+*	@author Kirill Kotsko
+*	@version 1.1
+*/
+
 #include "../HeaderFiles/Date/Date.h"
 
 using namespace std;

@@ -1,13 +1,28 @@
+/**
+*	@file Deque.h
+*	@author Kirill Kotsko
+*	@version 1.1
+*/
+
 #pragma once
 #include <iostream>
 #include <exception>
 
 using namespace std;
 
+
+/**
+* @brief Class Deque (double-ended queue)
+*
+* Represent all neccessary methods.
+* @tparam T type of data to storage in this container.
+*/
 template <typename T>
 class Deque {
 public:
+	// Constructor
 	Deque(int a = 30);
+	// Deconstructor
 	~Deque();
 
 	T pop_front();
@@ -20,8 +35,11 @@ public:
 	int size() const;
 	void push_front(const T&);
 private:
+	// Storage of data
 	T* data;
+	// Current size of container
 	int current_size;
+	// Maximal size of container
 	int maxsize;
 };
 

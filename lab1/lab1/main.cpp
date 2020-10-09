@@ -1,14 +1,33 @@
+/**
+*	@file main.cpp
+*	@author Kirill Kotsko
+*	@version 1.1
+*/
+
 #include "../lab1/HeaderFiles/Containers/Containers.h"
 #include "../lab1/HeaderFiles/Date/Date.h"
 #include "../lab1/HeaderFiles/Demonstration/Demonstration.h"
 
 using namespace std;
 
+/**
+ * @brief Main function of program
+ *
+ * UI that will help the user to use the functionality of the program.
+ */
+
 int main() {
+	// Variable that signals the end of the user's work with the program
 	bool work = true;
+	// Variable with which the user will be used while using the program.
 	TimeManagment x;
+	// Variable which controlled by user.
 	UI user;
 	while (work) {
+		/**
+        * Represents the functionality of each menu item
+		* @param Choice of the user
+        */
 		switch (user.main_menu())
 		{
 		case 0: {
@@ -26,10 +45,15 @@ int main() {
 			x.show_date(2);
 			cout << endl;
 
-			cout << "Insert date1. Example: 12.12.2012 12:0:0 " << endl;
+			cout << "Insert date1. Example: 12.12.2012 12:00:00 " << endl;
 			cout << "Insert: ";
 			Date date;
-			cin >> date;
+			try {
+				cin >> date;
+			}
+			catch (exception& ex){
+				cout << ex.what() << endl;
+			}
 			x.set_date(date, 1);
 			system("pause");
 			break;
@@ -40,10 +64,15 @@ int main() {
 			x.show_date(2);
 			cout << endl;
 
-			cout << "Insert date2. Example: 12.12.2012 12:0:0 " << endl;
+			cout << "Insert date2. Example: 12.12.2012 12:00:00 " << endl;
 			cout << "Insert: ";
 			Date date;
-			cin >> date;
+			try {
+				cin >> date;
+			}
+			catch (exception& ex) {
+				cout << ex.what() << endl;
+			}
 			x.set_date(date, 2);
 			system("pause");
 			break;
@@ -67,6 +96,10 @@ int main() {
 			break;
 		}
 		case 5: {
+			/**
+			* Variable that shows with what parameters 
+			* the user wants to see the difference between dates.
+			*/
 			int choice = user.variant_of_output_difference();
 			
 			x.show_current_date();
@@ -115,8 +148,13 @@ int main() {
 			break;
 		}
 		case 9: {
+			// Variable that signals the end of the user's work with the menu item.
 			bool work_of_component = true;
 			while (work_of_component) {
+				/**
+		        * Represents the functionality of demonstration mode.
+		        * @param Choice of the user
+		        */
 				switch (user.demonstration_choice_menu())
 				{
 				case 0: {
@@ -152,6 +190,7 @@ int main() {
 			break;
 		}
 		case 10: {
+			// End of user's work with program.
 			work = false;
 			break;
 		}

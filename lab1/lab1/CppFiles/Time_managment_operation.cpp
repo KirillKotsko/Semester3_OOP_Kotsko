@@ -1,3 +1,9 @@
+/**
+*   @file Time_managment_operation.cpp
+*	@author Kirill Kotsko
+*	@version 1.1
+*/
+
 #include "../HeaderFiles/Date/Date.h"
 
 using namespace std;
@@ -5,10 +11,13 @@ using namespace std;
 DifferenceBetweenDate TimeManagment::minus_for_dates(Date date1_, Date date2_) {
 	DifferenceBetweenDate result;
 
+	// Ammount days of each month.
 	int mounth[12] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30 , 31 };
+	// Variable which is used for calculate days difference.
 	int sum = 0;
 	if (date2_ < date1_) swap(date1_, date2_);
-
+	
+	// Variant for equal years.
 	if (date1_.year == date2_.year && date1_.month != date2_.month)
 	{
 		if ((date1_.year % 4 == 0 && date1_.year % 100 != 0) || (date1_.year % 400 == 0)) mounth[1]++;
@@ -26,6 +35,7 @@ DifferenceBetweenDate TimeManagment::minus_for_dates(Date date1_, Date date2_) {
 		result.minute = (seconds % 3600) / 60;
 		result.seconds = (seconds % 3600) % 60;
 	}
+	// Variant for equal years and month.
 	else if (date1_.year == date2_.year && date1_.month == date2_.month && date1_.day != date2_.day) {
 		sum = date2_.day - date1_.day;
 		sum--;
@@ -40,12 +50,14 @@ DifferenceBetweenDate TimeManagment::minus_for_dates(Date date1_, Date date2_) {
 		result.minute = (seconds % 3600) / 60;
 		result.seconds = (seconds % 3600) % 60;
 	}
+	// Variant for equal years, month and days.
 	else if (date1_.year == date2_.year && date1_.month == date2_.month && date1_.day == date2_.day) {
 		int seconds = (date2_.hour - date1_.hour) * 3600 + (date2_.minute - date1_.minute) * 60 + date2_.second - date1_.second;
 		result.hour = (seconds / 3600);
 		result.minute = (seconds % 3600) / 60;
 		result.seconds = (seconds % 3600) % 60;
 	}
+	// All others cases.
 	else {
 		int mounth_ammount_day_year1 = 0;
 		for (int i = 0; i < date1_.month - 1; i++)
@@ -120,6 +132,7 @@ Date TimeManagment::date_plus_diff(Date date, DifferenceBetweenDate plus) {
 Date TimeManagment::date_minus_diff(Date date, DifferenceBetweenDate minus) {
 	Date result = { date.day, date.month, date.year, 0, 0, 0 };
 
+	// Ammount days of each month.
 	int month[12] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30 , 31 };
 
 	int days = minus.days;

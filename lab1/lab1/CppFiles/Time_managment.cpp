@@ -1,3 +1,9 @@
+/**
+*	@file Time_managment.cpp
+*	@author Kirill Kotsko
+*	@version 1.1
+*/
+
 #include "../HeaderFiles/Date/Date.h"
 
 using namespace std;
@@ -57,6 +63,7 @@ void TimeManagment::show_date(int num_of_date) {
 	else cout << "Date2: " << date2 << endl;
 }
 
+// Details: https://lifehacker.ru/kakoj-den-nedeli/.
 int TimeManagment::get_weekday_of_date(int num_of_date) {
 	Date chosen_date;
 

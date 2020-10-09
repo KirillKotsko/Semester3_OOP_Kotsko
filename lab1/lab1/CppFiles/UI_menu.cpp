@@ -1,3 +1,9 @@
+/**
+*	@file UI_menu.cpp
+*	@author Kirill Kotsko
+*	@version 1.1
+*/
+
 #include "../HeaderFiles/Demonstration/Demonstration.h"
 
 using namespace std;
