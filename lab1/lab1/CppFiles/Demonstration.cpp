@@ -2,14 +2,6 @@
 
 using namespace std;
 
-template <typename T>
-ostream& operator<<(ostream& os, const vector<T>& a) {
-	for (const auto& x : a) {
-		os << x << " ";
-	}
-	return os;
-}
-
 void demonstration_stack() {
 	system("cls");
 	cout << "Demontstration functionality stack with int: " << endl << endl;

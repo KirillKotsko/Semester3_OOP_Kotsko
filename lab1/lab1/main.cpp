@@ -7,8 +7,9 @@ using namespace std;
 int main() {
 	bool work = true;
 	Time_managment x;
+	UI user;
 	while (work) {
-		switch (menu())
+		switch (user.main_menu())
 		{
 		case 0: {
 			x.show_current_date();
@@ -66,12 +67,14 @@ int main() {
 			break;
 		}
 		case 5: {
+			int choice = user.variant_of_output_difference();
+			
 			x.show_current_date();
 			x.show_date(1);
 			x.show_date(2);
 			cout << endl;
 
-			x.show_difference();
+			x.show_difference(choice);
 			cout << endl;
 			cout << "Current day + this difference " << x.add_difference(0, x.get_difference()) << endl;
 			cout << "Current day - this difference " << x.substract_difference(0, x.get_difference()) << endl;
@@ -112,13 +115,40 @@ int main() {
 			break;
 		}
 		case 9: {
-			demonstration_mode_stack();
-			demonstration_mode_queue();
-			demonstration_mode_deque();
-			demonstration_stack();
-			demonstraation_queue();
-			demonstration_deque();
-
+			bool work_of_component = true;
+			while (work_of_component) {
+				switch (user.demonstration_choice_menu())
+				{
+				case 0: {
+					user.demonstration_mode_stack_int();
+					user.demonstration_mode_queue_int();
+					user.demonstration_mode_deque_int();
+					break;
+				}
+				case 1: {
+					user.demonstration_mode_stack_string();
+					user.demonstration_mode_queue_string();
+					user.demonstration_mode_deque_string();
+					break;
+				}
+				case 2: {
+					user.demonstration_mode_stack_vector();
+					user.demonstration_mode_queue_vector();
+					user.demonstration_mode_deque_vector();
+					break;
+				}
+				case 3: {
+					user.demonstration_mode_stack_custom();
+					user.demonstration_mode_queue_custom();
+					user.demonstration_mode_deque_custom();
+					break;
+				}
+				case 4: {
+					work_of_component = false;
+					break;
+				}
+				}
+			}
 			break;
 		}
 		case 10: {

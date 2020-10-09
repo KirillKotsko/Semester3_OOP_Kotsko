@@ -33,9 +33,6 @@
     <ClCompile Include="main.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="CppFiles\Demonstration.cpp">
-      <Filter>CppFiles</Filter>
-    </ClCompile>
     <ClCompile Include="CppFiles\Overload.cpp">
       <Filter>CppFiles</Filter>
     </ClCompile>
@@ -43,6 +40,21 @@
       <Filter>CppFiles</Filter>
     </ClCompile>
     <ClCompile Include="CppFiles\Time_managment.cpp">
+      <Filter>CppFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="CppFiles\UI_menu.cpp">
+      <Filter>CppFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="CppFiles\Demo_stack.cpp">
+      <Filter>CppFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="CppFiles\Demo_queue.cpp">
+      <Filter>CppFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="CppFiles\Demo_deque.cpp">
+      <Filter>CppFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="CppFiles\Time_managment_operation.cpp">
       <Filter>CppFiles</Filter>
     </ClCompile>
   </ItemGroup>

@@ -33,6 +33,9 @@
     <ClCompile Include="..\lab1\CppFiles\Time_managment.cpp">
       <Filter>Файлы ресурсов</Filter>
     </ClCompile>
+    <ClCompile Include="..\lab1\CppFiles\Time_managment_operation.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Test.h">

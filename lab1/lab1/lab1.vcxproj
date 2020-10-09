@@ -123,10 +123,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="CppFiles\Demonstration.cpp" />
+    <ClCompile Include="CppFiles\Demo_deque.cpp" />
+    <ClCompile Include="CppFiles\Demo_queue.cpp" />
+    <ClCompile Include="CppFiles\Demo_stack.cpp" />
     <ClCompile Include="CppFiles\Overload.cpp" />
     <ClCompile Include="CppFiles\Time_is_now.cpp" />
     <ClCompile Include="CppFiles\Time_managment.cpp" />
+    <ClCompile Include="CppFiles\Time_managment_operation.cpp" />
+    <ClCompile Include="CppFiles\UI_menu.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>

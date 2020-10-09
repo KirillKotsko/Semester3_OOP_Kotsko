@@ -126,6 +126,7 @@
     <ClCompile Include="..\lab1\CppFiles\Overload.cpp" />
     <ClCompile Include="..\lab1\CppFiles\Time_is_now.cpp" />
     <ClCompile Include="..\lab1\CppFiles\Time_managment.cpp" />
+    <ClCompile Include="..\lab1\CppFiles\Time_managment_operation.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Test_Containers.cpp" />
     <ClCompile Include="Test_Date.cpp" />

@@ -43,8 +43,11 @@ public:
 		minute(minute_), seconds(second_) {}
 
 	Difference_between_date& operator=(const Difference_between_date& right);
+	void change_variant_of_output(int choice);
 	friend bool operator==(const Difference_between_date& lhs, const Difference_between_date& rhs);
 	friend ostream& operator<<(ostream& os, const Difference_between_date& date);
+private:
+	int variant_of_output = 0;
 };
 
 
@@ -72,7 +75,7 @@ public:
 	Difference_between_date minus_for_dates(Date date1_, Date date2_);
 	Date date_plus_diff(Date date, Difference_between_date plus);
 	Date date_minus_diff(Date date, Difference_between_date minus);
-	void show_difference();
+	void show_difference(int mode);
 	bool check_date(int num_of_date);
 	void set_date(const Date& a, int num_of_date);
 	Date add_difference(int num_of_date, Difference_between_date to_add);
