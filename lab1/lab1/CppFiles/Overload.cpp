@@ -27,16 +27,16 @@ ostream& operator<<(ostream& os, const Date& date) {
 	return os;
 }
 
-ostream& operator<<(ostream& os, const Difference_between_date& info) {
+ostream& operator<<(ostream& os, const DifferenceBetweenDate& info) {
 	os << "Difference between date1 and date2 are ";
 	if (info.variant_of_output == 0)
-	os << info.days << " days, " << info.hour << " hours, " << info.minute << " minutes, " << info.seconds << " seconds. ";
+		os << info.days << " days, " << info.hour << " hours, " << info.minute << " minutes, " << info.seconds << " seconds. ";
 	else if (info.variant_of_output == 1)
-	os << info.hour + info.days * 24 << " hours, " << info.minute << " minutes, " << info.seconds << " seconds. ";
+		os << info.hour + info.days * 24 << " hours, " << info.minute << " minutes, " << info.seconds << " seconds. ";
 	else if (info.variant_of_output == 2)
-	os << info.minute + info.hour * 60 + info.days * 24 * 60 << " minutes, " << info.seconds << " seconds. ";
+		os << info.minute + info.hour * 60 + info.days * 24 * 60 << " minutes, " << info.seconds << " seconds. ";
 	else if (info.variant_of_output == 3)
-	os << info.seconds + info.minute * 60 + info.hour * 60 * 60 + info.days * 24 * 60 * 60 << " seconds. ";
+		os << info.seconds + info.minute * 60 + info.hour * 60 * 60 + info.days * 24 * 60 * 60 << " seconds. ";
 	return os;
 }
 
@@ -55,7 +55,7 @@ bool operator==(const Date& lhs, const Date& rhs) {
 		vector<int>{rhs.year, rhs.month, rhs.day, rhs.hour, rhs.minute, rhs.second};
 }
 
-bool operator==(const Difference_between_date& lhs, const Difference_between_date& rhs) {
+bool operator==(const DifferenceBetweenDate& lhs, const DifferenceBetweenDate& rhs) {
 	return vector<int>{lhs.days, lhs.hour, lhs.minute, lhs.seconds} ==
 		vector<int>{rhs.days, rhs.hour, rhs.minute, rhs.seconds};
 }
@@ -73,7 +73,7 @@ Date& Date::operator=(const Date& right) {
 	return *this;
 }
 
-Difference_between_date& Difference_between_date::operator=(const Difference_between_date& right) {
+DifferenceBetweenDate& DifferenceBetweenDate::operator=(const DifferenceBetweenDate& right) {
 	if (this == &right) {
 		return *this;
 	}
@@ -84,7 +84,7 @@ Difference_between_date& Difference_between_date::operator=(const Difference_bet
 	return *this;
 }
 
-Time_managment& Time_managment::operator=(Time_managment right) {
+TimeManagment& TimeManagment::operator=(TimeManagment right) {
 	if (this == &right) {
 		return *this;
 	}
@@ -93,6 +93,7 @@ Time_managment& Time_managment::operator=(Time_managment right) {
 	return *this;
 }
 
-void Difference_between_date::change_variant_of_output(int choice) {
+void DifferenceBetweenDate::change_variant_of_output(int choice) {
 	variant_of_output = choice;
 }
+

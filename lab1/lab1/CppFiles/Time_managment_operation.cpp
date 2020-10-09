@@ -2,8 +2,8 @@
 
 using namespace std;
 
-Difference_between_date Time_managment::minus_for_dates(Date date1_, Date date2_) {
-	Difference_between_date result;
+DifferenceBetweenDate TimeManagment::minus_for_dates(Date date1_, Date date2_) {
+	DifferenceBetweenDate result;
 
 	int mounth[12] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30 , 31 };
 	int sum = 0;
@@ -85,7 +85,7 @@ Difference_between_date Time_managment::minus_for_dates(Date date1_, Date date2_
 	return result;
 }
 
-Date Time_managment::date_plus_diff(Date date, Difference_between_date plus) {
+Date TimeManagment::date_plus_diff(Date date, DifferenceBetweenDate plus) {
 	Date result = { date.day, date.month, date.year, 0, 0, 0 };
 
 	int days = plus.days;
@@ -101,7 +101,7 @@ Date Time_managment::date_plus_diff(Date date, Difference_between_date plus) {
 	while (days != 0) {
 		Date to_compare = { 1, result.month % 12 + 1, result.year, 0, 0, 0 };
 		if (to_compare.month == 1) to_compare.year++;
-		Difference_between_date remainder = minus_for_dates(to_compare, result);
+		DifferenceBetweenDate remainder = minus_for_dates(to_compare, result);
 		if (remainder.days <= days) {
 			result = to_compare;
 			days -= remainder.days;
@@ -117,7 +117,7 @@ Date Time_managment::date_plus_diff(Date date, Difference_between_date plus) {
 	return result;
 }
 
-Date Time_managment::date_minus_diff(Date date, Difference_between_date minus) {
+Date TimeManagment::date_minus_diff(Date date, DifferenceBetweenDate minus) {
 	Date result = { date.day, date.month, date.year, 0, 0, 0 };
 
 	int month[12] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30 , 31 };
@@ -144,7 +144,7 @@ Date Time_managment::date_minus_diff(Date date, Difference_between_date minus) {
 			to_compare.year--;
 		}
 		to_compare.day = month[to_compare.month - 1];
-		Difference_between_date remainder = minus_for_dates(result, to_compare);
+		DifferenceBetweenDate remainder = minus_for_dates(result, to_compare);
 		if (remainder.days <= days) {
 			result = to_compare;
 			days -= remainder.days;
@@ -159,3 +159,4 @@ Date Time_managment::date_minus_diff(Date date, Difference_between_date minus) {
 	result.second = seconds_to_record;
 	return result;
 }
+

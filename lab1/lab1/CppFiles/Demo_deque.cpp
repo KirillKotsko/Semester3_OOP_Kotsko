@@ -10,7 +10,7 @@ void UI::demonstration_mode_deque_int() {
 	cout << "Create (Deque<int> test(20)). " << endl;
 	Sleep(200);
 	cout << "Show max size of deque: test.max_size() = " << test.max_size() << endl;
-	
+
 
 	int a = rand();
 	cout << "int a = " << a << endl;
@@ -109,7 +109,7 @@ void UI::demonstration_mode_deque_string() {
 	system("cls");
 }
 
-void UI::demonstration_mode_deque_vector () {
+void UI::demonstration_mode_deque_vector() {
 	system("cls");
 	cout << "Demontstration functionality deque with vector<int>: " << endl << endl;
 	Sleep(200);
@@ -164,27 +164,27 @@ void UI::demonstration_mode_deque_vector () {
 	system("cls");
 }
 
-void UI::demonstration_mode_deque_custom () {
+void UI::demonstration_mode_deque_custom() {
 	system("cls");
-	cout << "Demontstration functionality deque with Time_managment: " << endl << endl;
+	cout << "Demontstration functionality deque with TimeManagment: " << endl << endl;
 	Sleep(200);
-	Deque<Time_managment> test(15);
-	cout << "Create (Deque<Time_managment> test(15)). " << endl;
+	Deque<TimeManagment> test(15);
+	cout << "Create (Deque<TimeManagment> test(15)). " << endl;
 	Sleep(200);
 	cout << "Show max size of deque: test.max_size() = " << test.max_size() << endl;
 
-	Time_managment a;
-	cout << "Time_managment a. a.get_date(1) = " << a.get_date(1) << endl;
+	TimeManagment a;
+	cout << "TimeManagment a. a.get_date(1) = " << a.get_date(1) << endl;
 	Sleep(200);
 	cout << "test.empty() = " << test.empty() << endl;
 	cout << "test.size() = " << test.size() << endl << endl;
-	cout << "Let's push_front Time_managment a. test.push_front(a)" << endl;
+	cout << "Let's push_front TimeManagment a. test.push_front(a)" << endl;
 	test.push_front(a);
 	Sleep(200);
 	cout << "Check value: " << endl;
 	Sleep(200);
-	Time_managment b = test.front();
-	cout << "Time_managment b = test.front(), b.get_date(1) = " << b.get_date(1) << endl;
+	TimeManagment b = test.front();
+	cout << "TimeManagment b = test.front(), b.get_date(1) = " << b.get_date(1) << endl;
 	b = test.back();
 	cout << "b = test.back(), b.get_date(1) = " << b.get_date(1) << endl;
 	cout << "test.size() = " << test.size() << endl << endl;

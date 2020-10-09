@@ -62,7 +62,7 @@ void UI::demonstration_mode_queue_string() {
 	cout << "Create (Queue<string> test(10)). " << endl;
 	Sleep(200);
 	cout << "Show max size of queue: test.max_size() = " << test.max_size() << endl;
-	
+
 	string a = "abc";
 	cout << "string a = " << a << endl;
 	Sleep(200);
@@ -165,26 +165,26 @@ void UI::demonstration_mode_queue_vector() {
 
 void UI::demonstration_mode_queue_custom() {
 	system("cls");
-	cout << "Demontstration functionality queue with Time_managment: " << endl << endl;
+	cout << "Demontstration functionality queue with TimeManagment: " << endl << endl;
 	Sleep(200);
-	Queue<Time_managment> test(10);
-	cout << "Create (Queue<Time_managment> test(10)). " << endl;
+	Queue<TimeManagment> test(10);
+	cout << "Create (Queue<TimeManagment> test(10)). " << endl;
 	Sleep(200);
 	cout << "Show max size of queue: test.max_size() = " << test.max_size() << endl;
-	
-	Time_managment a;
-	cout << "Time_managment a. a.get_date(1) = " << a.get_date(1) << endl;
+
+	TimeManagment a;
+	cout << "TimeManagment a. a.get_date(1) = " << a.get_date(1) << endl;
 	Sleep(200);
 	cout << "test.empty() = " << test.empty() << endl;
 	cout << "test.size() = " << test.size() << endl << endl;
 	Sleep(200);
 	test.push(a);
-	cout << "Let's push Time_managment a: test.push(a). " << endl;
+	cout << "Let's push TimeManagment a: test.push(a). " << endl;
 	Sleep(200);
 	cout << "Check value: " << endl;
 	Sleep(200);
-	Time_managment b = test.front();
-	cout << "Time_managment b = test.front(), b.get_date1 = " << b.get_date(1) << endl;
+	TimeManagment b = test.front();
+	cout << "TimeManagment b = test.front(), b.get_date1 = " << b.get_date(1) << endl;
 	b = test.back();
 	cout << "b = test.back(), b.get_date(1) = " << b.get_date(1) << endl;
 	cout << "test.empty() = " << test.empty() << endl;

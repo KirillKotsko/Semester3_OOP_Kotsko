@@ -2,19 +2,19 @@
 
 using namespace std;
 
-Time_managment::Time_managment() {
+TimeManagment::TimeManagment() {
 	date1 = get_current_date();
 	date2 = get_current_date();
 }
 
-Time_managment::Time_managment(const Date& a, const Date& b) {
+TimeManagment::TimeManagment(const Date& a, const Date& b) {
 	set_date(a, 1);
 	set_date(b, 2);
 }
 
-Time_managment::~Time_managment() {}
+TimeManagment::~TimeManagment() {}
 
-bool Time_managment::check_date(int num_of_date) {
+bool TimeManagment::check_date(int num_of_date) {
 	Date chosen_date;
 	if (num_of_date == 1) chosen_date = date1;
 	else chosen_date = date2;
@@ -32,7 +32,7 @@ bool Time_managment::check_date(int num_of_date) {
 	return flag;
 }
 
-void Time_managment::set_date(const Date& a, int num_of_date) {
+void TimeManagment::set_date(const Date& a, int num_of_date) {
 	if (num_of_date == 1) {
 		date1 = a;
 		if (!check_date(1)) {
@@ -47,17 +47,17 @@ void Time_managment::set_date(const Date& a, int num_of_date) {
 	}
 }
 
-Date Time_managment::get_date(int num_of_date) {
+Date TimeManagment::get_date(int num_of_date) {
 	if (num_of_date == 1) return date1;
 	else return date2;
 }
 
-void Time_managment::show_date(int num_of_date) {
+void TimeManagment::show_date(int num_of_date) {
 	if (num_of_date == 1) cout << "Date1: " << date1 << endl;
 	else cout << "Date2: " << date2 << endl;
 }
 
-int Time_managment::get_weekday_of_date(int num_of_date) {
+int TimeManagment::get_weekday_of_date(int num_of_date) {
 	Date chosen_date;
 
 	if (num_of_date == 0) chosen_date = get_current_date();
@@ -73,7 +73,7 @@ int Time_managment::get_weekday_of_date(int num_of_date) {
 	return result;
 }
 
-void Time_managment::day_of_the_week() {
+void TimeManagment::day_of_the_week() {
 	show_current_date();
 	cout << "Current date day of the week: " << WEEK_DAY[get_weekday_of_date(0)] << endl;
 	show_date(1);
@@ -82,11 +82,11 @@ void Time_managment::day_of_the_week() {
 	cout << "Date2 day of the week: " << WEEK_DAY[get_weekday_of_date(2)] << endl;
 }
 
-Difference_between_date Time_managment::get_difference() {
+DifferenceBetweenDate TimeManagment::get_difference() {
 	return minus_for_dates(date1, date2);
 }
 
-Date Time_managment::add_difference(int num_of_date, Difference_between_date to_add) {
+Date TimeManagment::add_difference(int num_of_date, DifferenceBetweenDate to_add) {
 	Date chosen_date;
 	if (num_of_date == 0) chosen_date = get_current_date();
 	else if (num_of_date == 1) chosen_date = date1;
@@ -95,7 +95,7 @@ Date Time_managment::add_difference(int num_of_date, Difference_between_date to_
 	return date_plus_diff(chosen_date, to_add);
 }
 
-Date Time_managment::substract_difference(int num_of_date, Difference_between_date to_substract) {
+Date TimeManagment::substract_difference(int num_of_date, DifferenceBetweenDate to_substract) {
 	Date chosen_date;
 	if (num_of_date == 0) chosen_date = get_current_date();
 	else if (num_of_date == 1) chosen_date = date1;
@@ -104,28 +104,28 @@ Date Time_managment::substract_difference(int num_of_date, Difference_between_da
 	return date_minus_diff(chosen_date, to_substract);
 }
 
-void Time_managment::show_difference(int mode) {
-	Difference_between_date to_print = get_difference();
+void TimeManagment::show_difference(int mode) {
+	DifferenceBetweenDate to_print = get_difference();
 	to_print.change_variant_of_output(mode);
 	cout << to_print << endl;
 }
 
-void Time_managment::show_julian_calendar() {
-	Difference_between_date transfer_days_to_julian = Difference_between_date({ from_gregorian_to_julian(get_current_date()), 0, 0, 0 });
+void TimeManagment::show_julian_calendar() {
+	DifferenceBetweenDate transfer_days_to_julian = DifferenceBetweenDate({ from_gregorian_to_julian(get_current_date()), 0, 0, 0 });
 	cout << "Current date in Julian calendar: " << date_minus_diff(get_current_date(), transfer_days_to_julian) << endl;
-	transfer_days_to_julian = Difference_between_date({ from_gregorian_to_julian(date1), 0, 0, 0 });
+	transfer_days_to_julian = DifferenceBetweenDate({ from_gregorian_to_julian(date1), 0, 0, 0 });
 	cout << "Date1 in Julian calendar: " << date_minus_diff(date1, transfer_days_to_julian) << endl;
-	transfer_days_to_julian = Difference_between_date({ from_gregorian_to_julian(date2), 0, 0, 0 });
+	transfer_days_to_julian = DifferenceBetweenDate({ from_gregorian_to_julian(date2), 0, 0, 0 });
 	cout << "Date2 in Julian calendar: " << date_minus_diff(date2, transfer_days_to_julian) << endl;
 }
 
-int Time_managment::week_in_month(int num_of_date) {
+int TimeManagment::week_in_month(int num_of_date) {
 	Date chosen_date;
 	if (num_of_date == 0) chosen_date = get_current_date();
 	else if (num_of_date == 1) chosen_date = date1;
 	else chosen_date = date2;
 
-	Difference_between_date tmp = minus_for_dates(chosen_date, Date({ 1, chosen_date.month, chosen_date.year, 0, 0, 0 }));
+	DifferenceBetweenDate tmp = minus_for_dates(chosen_date, Date({ 1, chosen_date.month, chosen_date.year, 0, 0, 0 }));
 	tmp.days++;
 	int ammount_of_weeks = tmp.days / 7;
 	int special_code_of_weekday = get_weekday_of_date(num_of_date);
@@ -142,13 +142,13 @@ int Time_managment::week_in_month(int num_of_date) {
 	return ammount_of_weeks;
 }
 
-int Time_managment::week_in_year(int num_of_date) {
+int TimeManagment::week_in_year(int num_of_date) {
 	Date chosen_date;
 	if (num_of_date == 0) chosen_date = get_current_date();
 	else if (num_of_date == 1) chosen_date = date1;
 	else chosen_date = date2;
 
-	Difference_between_date tmp = minus_for_dates(chosen_date, Date({ 1, 1, chosen_date.year, 0, 0, 0 }));
+	DifferenceBetweenDate tmp = minus_for_dates(chosen_date, Date({ 1, 1, chosen_date.year, 0, 0, 0 }));
 	tmp.days++;
 	int ammount_of_weeks = tmp.days / 7;
 	int special_code_of_weekday = get_weekday_of_date(num_of_date);
@@ -165,7 +165,7 @@ int Time_managment::week_in_year(int num_of_date) {
 	return ammount_of_weeks;
 }
 
-void Time_managment::alternative_insert_of_date(int num_of_date) {
+void TimeManagment::alternative_insert_of_date(int num_of_date) {
 	Date chosen_date;
 	if (num_of_date == 0) {
 		chosen_date = get_current_date();
@@ -184,7 +184,7 @@ void Time_managment::alternative_insert_of_date(int num_of_date) {
 	int special_code_of_weekday = get_weekday_of_date(num_of_date);
 	if (special_code_of_weekday == 0 || special_code_of_weekday == 1) special_code_of_weekday += 6;
 	else special_code_of_weekday -= 1;
-	Difference_between_date tmp = minus_for_dates(chosen_date, Date({ 1, chosen_date.month, chosen_date.year, 0, 0, 0 }));
+	DifferenceBetweenDate tmp = minus_for_dates(chosen_date, Date({ 1, chosen_date.month, chosen_date.year, 0, 0, 0 }));
 	tmp.days++;
 	tmp.days -= special_code_of_weekday;
 	if (tmp.days % 7 == 0) num_of_weekday++;
@@ -198,8 +198,8 @@ void Time_managment::alternative_insert_of_date(int num_of_date) {
 	cout << " ( " << setw(2) << chosen_date.hour << ":" << setw(2) << chosen_date.minute << ":" << setw(2) << chosen_date.second << " ) " << endl;
 }
 
-int Time_managment::from_gregorian_to_julian(const Date& date) {
-	if (date < Date({8, 3, 1300, 0, 0, 0})) return 7;
+int TimeManagment::from_gregorian_to_julian(const Date& date) {
+	if (date < Date({ 8, 3, 1300, 0, 0, 0 })) return 7;
 	if (Date({ 7, 3, 1300, 0, 0, 0 }) < date && date < Date({ 9, 3, 1400, 0, 0, 0 })) return 8;
 	if (Date({ 8, 3, 1400, 0, 0, 0 }) < date && date < Date({ 10, 3, 1500, 0, 0, 0 })) return 9;
 	if (Date({ 9, 3, 1500, 0, 0, 0 }) < date && date < Date({ 11, 3, 1700, 0, 0, 0 })) return 10;
@@ -208,3 +208,4 @@ int Time_managment::from_gregorian_to_julian(const Date& date) {
 	if (Date({ 12, 3, 1900, 0, 0, 0 }) < date && date < Date({ 14, 3, 2100, 0, 0, 0 })) return 13;
 	if (Date({ 13, 3, 2100, 0, 0, 0 }) < date) return 14;
 }
+

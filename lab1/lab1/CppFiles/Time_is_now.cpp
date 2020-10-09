@@ -2,14 +2,14 @@
 
 using namespace std;
 
-Time_is_now::Time_is_now() {
+TimeIsNow::TimeIsNow() {
 	GMT = 3;
 	update();
 }
 
-Time_is_now::~Time_is_now() {}
+TimeIsNow::~TimeIsNow() {}
 
-void Time_is_now::update() {
+void TimeIsNow::update() {
 	time_t seconds = time(NULL);
 	seconds += 3600 * (-3) + GMT * 3600;
 	tm* timeinfo = localtime(&seconds);
@@ -21,7 +21,7 @@ void Time_is_now::update() {
 	current_date.second = timeinfo->tm_sec;
 }
 
-void Time_is_now::change_GMT() {
+void TimeIsNow::change_GMT() {
 	int key = 0;
 	int code;
 	do {
@@ -91,14 +91,15 @@ void Time_is_now::change_GMT() {
 	GMT = key;
 }
 
-void Time_is_now::show_current_date() {
+void TimeIsNow::show_current_date() {
 	update();
 	cout << "Today is " << current_date << "GMT";
 	if (GMT >= 0) cout << "+";
 	cout << GMT << endl;
 }
 
-Date Time_is_now::get_current_date() {
+Date TimeIsNow::get_current_date() {
 	update();
 	return current_date;
 }
+

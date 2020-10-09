@@ -10,7 +10,7 @@ void UI::demonstration_mode_stack_int() {
 	cout << "Create (Stack<int> test). " << endl;
 	Sleep(200);
 	cout << "Show max size of stack: test.max_size() = " << test.max_size() << endl;
-	
+
 	int a = rand();
 	cout << "int a = " << a << endl;
 	Sleep(200);
@@ -60,7 +60,7 @@ void UI::demonstration_mode_stack_string() {
 	cout << "Create (Stack<string> test(10)). " << endl;
 	Sleep(200);
 	cout << "Show max size of stack: test.max_size() = " << test.max_size() << endl;
-	
+
 	string a = "abc";
 	cout << "string a = " << a << endl;
 	Sleep(200);
@@ -157,25 +157,25 @@ void UI::demonstration_mode_stack_vector() {
 
 void UI::demonstration_mode_stack_custom() {
 	system("cls");
-	cout << "Demontstration functionality stack with Time_managment: " << endl << endl;
+	cout << "Demontstration functionality stack with TimeManagment: " << endl << endl;
 	Sleep(200);
-	Stack<Time_managment> test;
-	cout << "Create (Stack<Time_managment> test). " << endl;
+	Stack<TimeManagment> test;
+	cout << "Create (Stack<TimeManagment> test). " << endl;
 	Sleep(200);
 	cout << "Show max size of stack: test.max_size() = " << test.max_size() << endl;
-	Time_managment a;
-	cout << "Time_managment a. a.get_date(1) = " << a.get_date(1) << endl;
+	TimeManagment a;
+	cout << "TimeManagment a. a.get_date(1) = " << a.get_date(1) << endl;
 	Sleep(200);
 	cout << "test.empty() = " << test.empty() << endl;
 	cout << "test.size() = " << test.size() << endl << endl;
 	Sleep(200);
 	test.push(a);
-	cout << "Let's push Time_managment a: test.push(a). " << endl;
+	cout << "Let's push TimeManagment a: test.push(a). " << endl;
 	Sleep(200);
 	cout << "Check value: " << endl;
 	Sleep(200);
-	Time_managment b = test.peek();
-	cout << " Time_managment b = test.peek(), b.get_date(1) = " << b.get_date(1) << endl;
+	TimeManagment b = test.peek();
+	cout << " TimeManagment b = test.peek(), b.get_date(1) = " << b.get_date(1) << endl;
 	cout << "test.empty() = " << test.empty() << endl;
 	cout << "test.size() = " << test.size() << endl << endl;
 	Sleep(200);

@@ -64,8 +64,8 @@ int UI::demonstration_choice_menu() {
 		else  cout << "   String" << endl;
 		if (key == 2) cout << "-> Vector<int>" << endl;
 		else  cout << "   Vector<int>" << endl;
-		if (key == 3) cout << "-> Custom class(Time_managment)" << endl;
-		else  cout << "   Custom class(Time_managment)" << endl;
+		if (key == 3) cout << "-> Custom class(TimeManagment)" << endl;
+		else  cout << "   Custom class(TimeManagment)" << endl;
 		if (key == 4) cout << "-> Back to main menu" << endl;
 		else  cout << "   Back to main menu" << endl;
 

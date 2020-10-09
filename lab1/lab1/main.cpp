@@ -6,7 +6,7 @@ using namespace std;
 
 int main() {
 	bool work = true;
-	Time_managment x;
+	TimeManagment x;
 	UI user;
 	while (work) {
 		switch (user.main_menu())
