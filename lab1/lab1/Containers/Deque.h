@@ -26,14 +26,63 @@ public:
 	// Deconstructor
 	~Deque();
 
+	/**
+	* Remove first element
+	*
+	* @return This element
+	*/
 	T pop_front();
+
+	/**
+	* Access first element
+	*
+	* @return This element
+	*/
 	const T& front();
+
+	/**
+	* Access top element
+	*
+	* @return This element
+	*/
 	const T& back();
+
+	/**
+	* Remove top element
+	*
+	* @return This element
+	*/
 	T pop_back();
+
+	/**
+	* Add element at the end
+	*/
 	void push_back(const T&);
+
+	/**
+	* Test whether container is empty
+	*
+	* @return true ore false
+	*/
 	bool empty();
+
+	/**
+	* Return maximum size of container
+	*
+	* @return max size
+	*/
 	int max_size() const;
+
+	/**
+	* Return current size of container
+	*
+	* @return size
+	*/
 	int size() const;
+
+	/**
+	* Add element at the begin
+	*/
 	void push_front(const T&);
 private:
 	// Storage of data
