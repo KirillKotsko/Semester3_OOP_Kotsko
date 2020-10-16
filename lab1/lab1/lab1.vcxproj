@@ -123,23 +123,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="CppFiles\Demo_deque.cpp" />
-    <ClCompile Include="CppFiles\Demo_queue.cpp" />
-    <ClCompile Include="CppFiles\Demo_stack.cpp" />
-    <ClCompile Include="CppFiles\Overload.cpp" />
-    <ClCompile Include="CppFiles\Time_is_now.cpp" />
-    <ClCompile Include="CppFiles\Time_managment.cpp" />
-    <ClCompile Include="CppFiles\Time_managment_operation.cpp" />
-    <ClCompile Include="CppFiles\UI_menu.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="UserInterface\UI.cpp" />
+    <ClCompile Include="Work with date\Date.cpp" />
+    <ClCompile Include="Work with date\DifferenceBetweenDate.cpp" />
+    <ClCompile Include="Work with date\TimeIsNow.cpp" />
+    <ClCompile Include="Work with date\TimeManagment.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="HeaderFiles\Containers\Containers.h" />
-    <ClInclude Include="HeaderFiles\Containers\Deque.h" />
-    <ClInclude Include="HeaderFiles\Containers\Queue.h" />
-    <ClInclude Include="HeaderFiles\Containers\Stack.h" />
-    <ClInclude Include="HeaderFiles\Date\Date.h" />
-    <ClInclude Include="HeaderFiles\Demonstration\Demonstration.h" />
+    <ClInclude Include="Containers\Containers.h" />
+    <ClInclude Include="Containers\Deque.h" />
+    <ClInclude Include="Containers\Queue.h" />
+    <ClInclude Include="Containers\Stack.h" />
+    <ClInclude Include="UserInterface\UI.h" />
+    <ClInclude Include="Work with date\Date.h" />
+    <ClInclude Include="Work with date\DifferenceBetweenDate.h" />
+    <ClInclude Include="Work with date\TimeIsNow.h" />
+    <ClInclude Include="Work with date\TimeManagment.h" />
+    <ClInclude Include="Work with date\WorkWithDate.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

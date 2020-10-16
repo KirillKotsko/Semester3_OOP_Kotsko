@@ -1,12 +1,12 @@
 /**
-*	@file Demonstration.h
+*	@file UI.h
 *	@author Kirill Kotsko
-*	@version 1.1
+*	@version 1.2
 */
 
 #pragma once
 #include "../Containers/Containers.h"
-#include "../Date/Date.h"
+#include "../Work with date/WorkWithDate.h"
 #include "windows.h"
 #include <cstdlib>
 #include <vector>
@@ -30,7 +30,7 @@ public:
 	 */
 	template <typename T>
 	friend ostream& operator<<(ostream& os, const vector<T>& a);
-	
+
 	/**
 	 * Main menu interface.
 	 * @return choice of user.
@@ -48,8 +48,8 @@ public:
 	int variant_of_output_difference();
 
 	/**
-	* Four methods that demonstrate the functionality of the stack using 
-	* int, string, vector<int> and custom class TimeManagment.  
+	* Four methods that demonstrate the functionality of the stack using
+	* int, string, vector<int> and custom class TimeManagment.
 	*/
 	void demonstration_mode_stack_int();
 	void demonstration_mode_stack_string();
@@ -64,7 +64,7 @@ public:
 	void demonstration_mode_queue_string();
 	void demonstration_mode_queue_vector();
 	void demonstration_mode_queue_custom();
-	
+
 	/**
 	* Four methods that demonstrate the functionality of the deque using
 	* int, string, vector<int> and custom class TimeManagment.

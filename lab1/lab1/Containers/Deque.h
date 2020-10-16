@@ -1,7 +1,8 @@
+#pragma once
 /**
 *	@file Deque.h
 *	@author Kirill Kotsko
-*	@version 1.1
+*	@version 1.2
 */
 
 #pragma once

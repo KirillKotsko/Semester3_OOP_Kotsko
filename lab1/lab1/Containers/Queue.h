@@ -1,7 +1,7 @@
 /**
 *	@file Queue.h
 *	@author Kirill Kotsko
-*	@version 1.1
+*	@version 1.2
 */
 
 #pragma once
@@ -19,7 +19,7 @@ using namespace std;
 */
 template <typename T>
 class Queue {
-public: 
+public:
 	// Constructor
 	Queue(int a = 30) : queue(Deque<T>(a)) {}
 

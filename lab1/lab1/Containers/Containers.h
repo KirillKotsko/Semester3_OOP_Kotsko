@@ -1,8 +1,8 @@
 /**
 *	File which linked stack, queue and deque libraries.
-*   @file Date.h
+*   @file Containers.h
 *	@author Kirill Kotsko
-*	@version 1.1
+*	@version 1.2
 */
 
 #pragma once

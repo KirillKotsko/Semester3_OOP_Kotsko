@@ -1,10 +1,10 @@
 /**
-*	@file Time_is_now.cpp
+*	@file TimeIsNow.cpp
 *	@author Kirill Kotsko
-*	@version 1.1
+*	@version 1.2
 */
 
-#include "../HeaderFiles/Date/Date.h"
+#include "../Work with date/TimeIsNow.h"
 
 using namespace std;
 
@@ -108,4 +108,3 @@ Date TimeIsNow::get_current_date() {
 	update();
 	return current_date;
 }
-

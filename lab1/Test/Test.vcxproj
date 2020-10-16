@@ -123,10 +123,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\lab1\CppFiles\Overload.cpp" />
-    <ClCompile Include="..\lab1\CppFiles\Time_is_now.cpp" />
-    <ClCompile Include="..\lab1\CppFiles\Time_managment.cpp" />
-    <ClCompile Include="..\lab1\CppFiles\Time_managment_operation.cpp" />
+    <ClCompile Include="..\lab1\Work with date\Date.cpp" />
+    <ClCompile Include="..\lab1\Work with date\DifferenceBetweenDate.cpp" />
+    <ClCompile Include="..\lab1\Work with date\TimeIsNow.cpp" />
+    <ClCompile Include="..\lab1\Work with date\TimeManagment.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Test_Containers.cpp" />
     <ClCompile Include="Test_Date.cpp" />

@@ -1,10 +1,10 @@
+#pragma once
 /**
-*	@file Date.h
+*	@file TimeMangment.h
 *	@author Kirill Kotsko
-*	@version 1.1
+*	@version 1.2
 */
 
-#pragma once
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include <ctime>
@@ -12,203 +12,16 @@
 #include <conio.h>
 #include <vector>
 #include <iomanip>
+#include "Date.h"
+#include "DifferenceBetweenDate.h"
+#include "TimeIsNow.h"
 
 using namespace std;
 
 /**
-* @brief Date
+* @brief Users time managment
 *
-* The class represents the date.
-*/
-class Date {
-public:
-
-	// Number of day.
-	int day;
-	// Number of month.
-	int month;
-	// Number of year.
-	int year;
-	// Ammount of hours.
-	int hour;
-	// Ammount of minutes.
-	int minute;
-	// Ammount of seconds.
-	int second;
-
-	// Default constructor. Initializes date variabels.
-	Date() : day(0), month(0), year(0),
-		hour(0), minute(0), second(0) {}
-
-	/**
-	* @brief constructor
-	*
-	* @param value of day
-	* @param value of month
-	* @param value of year
-	* @param value of hour
-	* @param value of minute
-	* @param value of seconds
-	*/
-	Date(int day_, int month_, int year_, int hour_, int minute_, int second_) : day(day_), month(month_), year(year_),
-		hour(hour_), minute(minute_), second(second_) {}
-
-	
-	/**
-	* Overload of operator "=" for class Date.
-	* @param Variable to copy data.
-	* @return Changed variable.
-	*/
-	Date& operator=(const Date& right);
-	/**
-	* Overload of operator "<" for class Date.
-	* @param Left hand side param for operator.
-	* @param Right hand side param for operator.
-	* @return True or false.
-	*/
-	friend bool operator<(const Date& lhs, const Date& rhs);
-	/**
-	* Overload of operator ">" for class Date.
-	* @param Left hand side param for operator.
-	* @param Right hand side param for operator.
-	* @return True or false.
-	*/
-	friend bool operator>(const Date& lhs, const Date& rhs);
-	/**
-	* Overload of operator "==" for class Date.
-	* @param Left hand side param for operator.
-	* @param Right hand side param for operator.
-	* @return True or false.
-	*/
-	friend bool operator==(const Date& lhs, const Date& rhs);
-	/**
-	 * Overload of operator ">>" for date.
-	 * @param stream.
-	 * @param date thats inputs.
-	 * @return stream.
-	 */
-	friend istream& operator>>(istream& stream, Date& date);
-	/**
-	 * Overload of operator "<<" for date.
-	 * @param stream.
-	 * @param date thats outputs.
-	 * @return stream.
-	 */
-	friend ostream& operator<<(ostream& os, const Date& date);
-};
-
-/**
-* @brief Difference between dates
-*
-* The class represents difference between two dates.
-*/
-class DifferenceBetweenDate {
-public:
-
-	// Variable that shows difference in days.
-	int days;
-	// Variable that shows difference in hours.
-	int hour;
-	// Variable that shows difference in minutes.
-	int minute;
-	// Variable that shows difference in secnods.
-	int seconds;
-
-	// Default constructor. Initializes variables by 0.
-	DifferenceBetweenDate() : days(0), hour(0), minute(0), seconds(0) {}
-	/**
-	* @brief constructor
-	*
-	* @param difference in days
-	* @param difference in hours
-	* @param difference in minutes
-	* @param difference in seconds
-	*/
-	DifferenceBetweenDate(int day_, int hour_, int minute_, int second_) : days(day_), hour(hour_),
-		minute(minute_), seconds(second_) {}
-
-	/**
-	* Overload of operator "=" for class DifferenceBetweenDate.
-	* @param Variable to copy data.
-	* @return Changed variable.
-	*/
-	DifferenceBetweenDate& operator=(const DifferenceBetweenDate& right);
-	/**
-	* Method that change variable "variant_of_output".
-	* @param Choice mode by user.
-	*/
-	void change_variant_of_output(int choice);
-	/**
-	* Overload of operator "==" for class Date.
-	* @param Left hand side param for operator.
-	* @param Right hand side param for operator.
-	* @return True or false.
-	*/
-	friend bool operator==(const DifferenceBetweenDate& lhs, const DifferenceBetweenDate& rhs);
-	/**
-	 * Overload of operator "<<" for date.
-	 * @param stream.
-	 * @param date thats outputs.
-	 * @return stream.
-	 */
-	friend ostream& operator<<(ostream& os, const DifferenceBetweenDate& date);
-private:
-
-	/**
-	* Variable for user. Value of the mode that displays 
-	* the difference for the given parameters.
-	*
-	* Default (0) - DHMS (days, hours, minutes and seconds).
-	* (1) - HMS (hours, minutes and seconds).
-	* (2) - MS (minutes and seconds).
-	* (3) - S (seconds).
-	*/
-	int variant_of_output = 0;
-};
-
-/**
-* @brief Current time
-*
-* The class represents methods for work with current date.
-*/
-class TimeIsNow {
-public:
-	// Default constructor. Initializes variable by current date.
-	TimeIsNow();
-	// Destructor.
-	~TimeIsNow();
-
-	/**
-	* Method for user. Changes time zone.
-	*/
-	void change_GMT();
-	/**
-	* Output current date.
-	*/
-	void show_current_date();
-	/**
-	* Method that get current date.
-	* @return current date
-	*/
-	Date get_current_date();
-
-private:
-
-	/**
-    * Method that controlled up-to-date of the date.
-    */
-	void update();
-
-	// Current date
-	Date current_date;
-	// Time zone behind which the current date is determined.
-	int GMT;
-};
-
-/**
-* @brief Users time managment 
-*
-* The class that helps user with time managment. 
+* The class that helps user with time managment.
 * Performs operations on the current date and two user-specified ones.
 */
 class TimeManagment : public TimeIsNow {
@@ -259,7 +72,7 @@ public:
 	/**
 	* Method for user. Show difference between date1 and date2 which the user asked.
 	* @param mode for output.
-	*/	
+	*/
 	void show_difference(int mode);
 	/**
 	* Method which add difference to current date or date1 or date2, which the user asked.
@@ -297,9 +110,9 @@ public:
 	*/
 	Date get_date(int num_of_date);
 	/**
-    * Show the date from class TimeManagment.
-    * @param 0 - current date, 1 - date1, 2 - date2.
-    */
+	* Show the date from class TimeManagment.
+	* @param 0 - current date, 1 - date1, 2 - date2.
+	*/
 	void show_date(int num_of_date);
 
 	/**
@@ -316,7 +129,7 @@ public:
 
 	/**
 	* Method calculate number of weekday by date
-	* 
+	*
 	* @param 0 - current date, 1 - date1, 2 - date2.
 	* @return num of weekday.
 	*/
@@ -343,7 +156,7 @@ public:
 	* Show alternative variant of date represent.
 	*/
 	void alternative_insert_of_date(int num_of_date);
-	
+
 	/**
 	* Overload of operator "=" for class TimeManagment.
 	* @param Variable to copy data.
@@ -371,5 +184,3 @@ private:
 	// Constant which represent ammount days of each month.
 	const int DAY_IN_MONTH[12] = { 31 , 28 , 31 , 30 , 31 , 30 , 31 , 31 , 30 , 31 , 30 , 31 };
 };
-
-

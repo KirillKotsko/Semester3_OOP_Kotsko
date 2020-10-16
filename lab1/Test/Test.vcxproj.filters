@@ -24,16 +24,16 @@
     <ClCompile Include="Test_Date.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\lab1\CppFiles\Overload.cpp">
-      <Filter>Файлы ресурсов</Filter>
+    <ClCompile Include="..\lab1\Work with date\Date.cpp">
+      <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\lab1\CppFiles\Time_is_now.cpp">
-      <Filter>Файлы ресурсов</Filter>
+    <ClCompile Include="..\lab1\Work with date\DifferenceBetweenDate.cpp">
+      <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\lab1\CppFiles\Time_managment.cpp">
-      <Filter>Файлы ресурсов</Filter>
+    <ClCompile Include="..\lab1\Work with date\TimeIsNow.cpp">
+      <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\lab1\CppFiles\Time_managment_operation.cpp">
+    <ClCompile Include="..\lab1\Work with date\TimeManagment.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

@@ -1,7 +1,7 @@
 /**
 *	@file Stack.h
 *	@author Kirill Kotsko
-*	@version 1.1
+*	@version 1.2
 */
 
 #pragma once
@@ -32,4 +32,4 @@ public:
 private:
 	// Storage of data
 	Deque<T> stack;
-};
+}; 
