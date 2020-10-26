@@ -30,26 +30,20 @@
     <ClCompile Include="UserInterface\UI.cpp">
       <Filter>UserInterface</Filter>
     </ClCompile>
-    <ClCompile Include="Work with date\Date.cpp">
-      <Filter>Work with date</Filter>
-    </ClCompile>
-    <ClCompile Include="Work with date\DifferenceBetweenDate.cpp">
-      <Filter>Work with date</Filter>
-    </ClCompile>
     <ClCompile Include="Work with date\TimeIsNow.cpp">
       <Filter>Work with date</Filter>
     </ClCompile>
     <ClCompile Include="Work with date\TimeManagment.cpp">
       <Filter>Work with date</Filter>
     </ClCompile>
+    <ClCompile Include="Work with date\DateWithTime.cpp">
+      <Filter>Work with date</Filter>
+    </ClCompile>
+    <ClCompile Include="Work with date\DifferenceBetweenDateWithTime.cpp">
+      <Filter>Work with date</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Work with date\Date.h">
-      <Filter>Work with date</Filter>
-    </ClInclude>
-    <ClInclude Include="Work with date\DifferenceBetweenDate.h">
-      <Filter>Work with date</Filter>
-    </ClInclude>
     <ClInclude Include="Work with date\TimeIsNow.h">
       <Filter>Work with date</Filter>
     </ClInclude>
@@ -88,6 +82,18 @@
     </ClInclude>
     <ClInclude Include="Containers\ContainersLink.h">
       <Filter>Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="Work with date\DateWithTime.h">
+      <Filter>Work with date</Filter>
+    </ClInclude>
+    <ClInclude Include="Work with date\DifferenceBetweenDateWithTime.h">
+      <Filter>Work with date</Filter>
+    </ClInclude>
+    <ClInclude Include="Work with date\Date.h">
+      <Filter>Work with date</Filter>
+    </ClInclude>
+    <ClInclude Include="Work with date\Time.h">
+      <Filter>Work with date</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

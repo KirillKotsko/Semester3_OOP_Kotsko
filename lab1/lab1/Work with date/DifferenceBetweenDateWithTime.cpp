@@ -1,20 +1,20 @@
 /**
-*	@file DifferenceBetweenDate.cpp
+*	@file DifferenceBetweenDateWithTime.cpp
 *	@author Kirill Kotsko
 *	@version 1.2
 */
 
-#include "../Work with date/DifferenceBetweenDate.h"
+#include "../Work with date/DifferenceBetweenDateWithTime.h"
 
 using namespace std;
 
-bool operator==(const DifferenceBetweenDate& lhs, const DifferenceBetweenDate& rhs) {
+bool operator==(const DifferenceBetweenDateWithTime& lhs, const DifferenceBetweenDateWithTime& rhs) {
 	return vector<int>{lhs.days, lhs.hour, lhs.minute, lhs.seconds} ==
 		vector<int>{rhs.days, rhs.hour, rhs.minute, rhs.seconds};
 }
 
-ostream& operator<<(ostream& os, const DifferenceBetweenDate& info) {
-	os << "Difference between date1 and date2 are ";
+ostream& operator<<(ostream& os, const DifferenceBetweenDateWithTime& info) {
+	os << "Difference between DateWithTime1 and DateWithTime2 are ";
 	if (info.variant_of_output == 0)
 		os << info.days << " days, " << info.hour << " hours, " << info.minute << " minutes, " << info.seconds << " seconds. ";
 	else if (info.variant_of_output == 1)
@@ -26,7 +26,7 @@ ostream& operator<<(ostream& os, const DifferenceBetweenDate& info) {
 	return os;
 }
 
-DifferenceBetweenDate& DifferenceBetweenDate::operator=(const DifferenceBetweenDate& right) {
+DifferenceBetweenDateWithTime& DifferenceBetweenDateWithTime::operator=(const DifferenceBetweenDateWithTime& right) {
 	if (this == &right) {
 		return *this;
 	}
@@ -37,6 +37,6 @@ DifferenceBetweenDate& DifferenceBetweenDate::operator=(const DifferenceBetweenD
 	return *this;
 }
 
-void DifferenceBetweenDate::change_variant_of_output(int choice) {
+void DifferenceBetweenDateWithTime::change_variant_of_output(int choice) {
 	variant_of_output = choice;
 }

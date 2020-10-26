@@ -123,8 +123,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\lab1\Work with date\Date.cpp" />
-    <ClCompile Include="..\lab1\Work with date\DifferenceBetweenDate.cpp" />
+    <ClCompile Include="..\lab1\Work with date\DateWithTime.cpp" />
+    <ClCompile Include="..\lab1\Work with date\DifferenceBetweenDateWithTime.cpp" />
     <ClCompile Include="..\lab1\Work with date\TimeIsNow.cpp" />
     <ClCompile Include="..\lab1\Work with date\TimeManagment.cpp" />
     <ClCompile Include="main.cpp" />

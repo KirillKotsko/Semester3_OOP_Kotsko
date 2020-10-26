@@ -5,7 +5,7 @@
 */
 
 #include "../lab1/Containers/ContainersLink.h"
-#include "../lab1/Work with date/Date.h"
+#include "../lab1/Work with date/DateWithTime.h"
 #include "../lab1/UserInterface/UI.h"
 
 using namespace std;
@@ -25,86 +25,87 @@ int main() {
 	UI user;
 	while (work) {
 		/**
-        * Represents the functionality of each menu item
+		* Represents the functionality of each menu item
 		* @param Choice of the user
-        */
+		*/
 		switch (user.main_menu())
 		{
 		case 0: {
-			x.show_current_date();
-			x.show_date(1);
-			x.show_date(2);
+			x.show_current_date_with_time();
+			x.show_date_with_time(1);
+			x.show_date_with_time(2);
 			cout << endl;
 
 			system("pause");
 			break;
 		}
 		case 1: {
-			x.show_current_date();
-			x.show_date(1);
-			x.show_date(2);
+			x.show_current_date_with_time();
+			x.show_date_with_time(1);
+			x.show_date_with_time(2);
 			cout << endl;
 
-			cout << "Insert date1. Example: 12.12.2012 12:00:00 " << endl;
+			cout << "Insert date_with_time1. Example: 12.12.2012 12:00:00 " << endl;
 			cout << "Insert: ";
-			Date date;
+			DateWithTime date_with_time;
 			try {
-				cin >> date;
-			}
-			catch (exception& ex){
-				cout << ex.what() << endl;
-			}
-			x.set_date(date, 1);
-			system("pause");
-			break;
-		}
-		case 2: {
-			x.show_current_date();
-			x.show_date(1);
-			x.show_date(2);
-			cout << endl;
-
-			cout << "Insert date2. Example: 12.12.2012 12:00:00 " << endl;
-			cout << "Insert: ";
-			Date date;
-			try {
-				cin >> date;
+				cin >> date_with_time;
 			}
 			catch (exception& ex) {
 				cout << ex.what() << endl;
 			}
-			x.set_date(date, 2);
+			x.set_date_with_time(date_with_time, 1);
+			system("pause");
+			break;
+		}
+		case 2: {
+			x.show_current_date_with_time();
+			x.show_date_with_time(1);
+			x.show_date_with_time(2);
+			cout << endl;
+
+			cout << "Insert date_with_time2. Example: 12.12.2012 12:00:00 " << endl;
+			cout << "Insert: ";
+			DateWithTime date_with_time;
+			try {
+				cin >> date_with_time;
+			}
+			catch (exception& ex) {
+				cout << ex.what() << endl;
+			}
+			x.set_date_with_time(date_with_time, 2);
 			system("pause");
 			break;
 		}
 		case 3: {
-			x.show_current_date();
-			x.show_date(1);
-			x.show_date(2);
+			x.show_current_date_with_time();
+			x.show_date_with_time(1);
+			x.show_date_with_time(2);
 			cout << endl;
 
-			x.alternative_insert_of_date(0);
-			x.alternative_insert_of_date(1);
-			x.alternative_insert_of_date(2);
+			x.alternative_insert_of_date_with_time(0);
+			x.alternative_insert_of_date_with_time(1);
+			x.alternative_insert_of_date_with_time(2);
 			system("pause");
 			break;
 		}
 		case 4: {
 			x.change_GMT();
+			x.show_current_date_with_time();
 			cout << "Successfully changed! " << endl;
 			system("pause");
 			break;
 		}
 		case 5: {
 			/**
-			* Variable that shows with what parameters 
-			* the user wants to see the difference between dates.
+			* Variable that shows with what parameters
+			* the user wants to see the difference between date_with_times.
 			*/
 			int choice = user.variant_of_output_difference();
-			
-			x.show_current_date();
-			x.show_date(1);
-			x.show_date(2);
+
+			x.show_current_date_with_time();
+			x.show_date_with_time(1);
+			x.show_date_with_time(2);
 			cout << endl;
 
 			x.show_difference(choice);
@@ -112,11 +113,11 @@ int main() {
 			cout << "Current day + this difference " << x.add_difference(0, x.get_difference()) << endl;
 			cout << "Current day - this difference " << x.substract_difference(0, x.get_difference()) << endl;
 			cout << endl;
-			cout << "Date1 + this difference " << x.add_difference(1, x.get_difference()) << endl;
-			cout << "Date1 - this difference " << x.substract_difference(1, x.get_difference()) << endl;
+			cout << "Date_with_time1 + this difference " << x.add_difference(1, x.get_difference()) << endl;
+			cout << "Date_with_time1 - this difference " << x.substract_difference(1, x.get_difference()) << endl;
 			cout << endl;
-			cout << "Date2 + this difference " << x.add_difference(2, x.get_difference()) << endl;
-			cout << "Date2 - this difference " << x.substract_difference(2, x.get_difference()) << endl;
+			cout << "Date_with_time2 + this difference " << x.add_difference(2, x.get_difference()) << endl;
+			cout << "Date_with_time2 - this difference " << x.substract_difference(2, x.get_difference()) << endl;
 			system("pause");
 			break;
 		}
@@ -126,21 +127,21 @@ int main() {
 			break;
 		}
 		case 7: {
-			x.show_current_date();
-			x.show_date(1);
-			x.show_date(2);
+			x.show_current_date_with_time();
+			x.show_date_with_time(1);
+			x.show_date_with_time(2);
 			cout << endl;
 
-			cout << "Current date - number of week in this month is " << x.week_in_month(0) << " and in this year " << x.week_in_year(0) << endl;
-			cout << "Date1 - number of week in this month is " << x.week_in_month(1) << " and in this year " << x.week_in_year(1) << endl;
-			cout << "Date2 - number of week in this month is " << x.week_in_month(2) << " and in this year " << x.week_in_year(2) << endl;
+			cout << "Current date_with_time - number of week in this month is " << x.week_in_month(0) << " and in this year " << x.week_in_year(0) << endl;
+			cout << "Date_with_time1 - number of week in this month is " << x.week_in_month(1) << " and in this year " << x.week_in_year(1) << endl;
+			cout << "Date_with_time2 - number of week in this month is " << x.week_in_month(2) << " and in this year " << x.week_in_year(2) << endl;
 			system("pause");
 			break;
 		}
 		case 8: {
-			x.show_current_date();
-			x.show_date(1);
-			x.show_date(2);
+			x.show_current_date_with_time();
+			x.show_date_with_time(1);
+			x.show_date_with_time(2);
 			cout << endl;
 
 			x.show_julian_calendar();
@@ -152,9 +153,9 @@ int main() {
 			bool work_of_component = true;
 			while (work_of_component) {
 				/**
-		        * Represents the functionality of demonstration mode.
-		        * @param Choice of the user
-		        */
+				* Represents the functionality of demonstration mode.
+				* @param Choice of the user
+				*/
 				switch (user.demonstration_choice_menu())
 				{
 				case 0: {

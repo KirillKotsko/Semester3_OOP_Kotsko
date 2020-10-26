@@ -1,10 +1,10 @@
-#pragma once
 /**
 *	@file TimeMangment.h
 *	@author Kirill Kotsko
 *	@version 1.2
 */
 
+#pragma once
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include <ctime>
@@ -12,8 +12,8 @@
 #include <conio.h>
 #include <vector>
 #include <iomanip>
-#include "Date.h"
-#include "DifferenceBetweenDate.h"
+#include "DateWithTime.h"
+#include "DifferenceBetweenDateWithTime.h"
 #include "TimeIsNow.h"
 
 using namespace std;
@@ -22,140 +22,140 @@ using namespace std;
 * @brief Users time managment
 *
 * The class that helps user with time managment.
-* Performs operations on the current date and two user-specified ones.
+* Performs operations on the current DateWithTime and two user-specified ones.
 */
 class TimeManagment : public TimeIsNow {
 public:
 
-	// Default constructor. Initializes variable date1 and.
+	// Default constructor. Initializes variable date_with_time1 and.
 	TimeManagment();
 	/**
 	* @brief constructor
 	*
-	* @param first date.
-	* @param second date.
+	* @param first date_with_time.
+	* @param second date_with_time.
 	*/
-	TimeManagment(const Date& a, const Date& b);
+	TimeManagment(const DateWithTime& a, const DateWithTime& b);
 	// Destructor.
 	~TimeManagment();
 
 	/**
-	* Method get difference between date1 and date2.
+	* Method get difference between date_with_time1 and date_with_time2.
 	*
-	* @return difference between dates.
+	* @return difference between date_with_times.
 	*/
-	DifferenceBetweenDate get_difference();
+	DifferenceBetweenDateWithTime get_difference();
 	/**
-	* Method for calculating difference between two dates (replacement operation "-").
+	* Method for calculating difference between two date_with_times (replacement operation "-").
 	*
-	* @param first date.
-	* @param second date.
+	* @param first date_with_time.
+	* @param second date_with_time.
 	* @return result.
 	*/
-	DifferenceBetweenDate minus_for_dates(Date date1_, Date date2_);
+	DifferenceBetweenDateWithTime minus_for_date_with_times(DateWithTime date_with_time1_, DateWithTime date_with_time2_);
 	/**
-	* Method for calculating date plus difference which you want to add (replacement operation "+").
+	* Method for calculating date_with_time plus difference which you want to add (replacement operation "+").
 	*
-	* @param date.
+	* @param date_with_time.
 	* @param difference which you want to add.
-	* @return new date (new date - date = difference).
+	* @return new date_with_time (new date_with_time - date_with_time = difference).
 	*/
-	Date date_plus_diff(Date date, DifferenceBetweenDate plus);
+	DateWithTime date_with_time_plus_diff(DateWithTime date_with_time, DifferenceBetweenDateWithTime plus);
 	/**
-	* Method for calculating date minus difference which you want to substract (replacement operation "-").
+	* Method for calculating date_with_time minus difference which you want to substract (replacement operation "-").
 	*
-	* @param date.
+	* @param date_with_time.
 	* @param difference which you want to substract.
-	* @return new date (date - new date = difference).
+	* @return new date_with_time (date_with_time - new date_with_time = difference).
 	*/
-	Date date_minus_diff(Date date, DifferenceBetweenDate minus);
+	DateWithTime date_with_time_minus_diff(DateWithTime date_with_time, DifferenceBetweenDateWithTime minus);
 	/**
-	* Method for user. Show difference between date1 and date2 which the user asked.
+	* Method for user. Show difference between date_with_time1 and date_with_time2 which the user asked.
 	* @param mode for output.
 	*/
 	void show_difference(int mode);
 	/**
-	* Method which add difference to current date or date1 or date2, which the user asked.
-	* @param 0 - current date, 1 - date1, 2 - date2.
+	* Method which add difference to current date_with_time or date_with_time1 or date_with_time2, which the user asked.
+	* @param 0 - current date_with_time, 1 - date_with_time1, 2 - date_with_time2.
 	* @param difference to add.
-	* @return result date.
+	* @return result date_with_time.
 	*/
-	Date add_difference(int num_of_date, DifferenceBetweenDate to_add);
+	DateWithTime add_difference(int num_of_date_with_time, DifferenceBetweenDateWithTime to_add);
 	/**
-	* Method which substract difference to current date or date1 or date2, which the user asked.
-	* @param 0 - current date, 1 - date1, 2 - date2.
+	* Method which substract difference to current date_with_time or date_with_time1 or date_with_time2, which the user asked.
+	* @param 0 - current date_with_time, 1 - date_with_time1, 2 - date_with_time2.
 	* @param difference to substract.
-	* @return result date.
+	* @return result date_with_time.
 	*/
-	Date substract_difference(int num_of_date, DifferenceBetweenDate to_substract);
+	DateWithTime substract_difference(int num_of_date_with_time, DifferenceBetweenDateWithTime to_substract);
 
 	/**
-	* Method check: date exist or not.
+	* Method check: date_with_time exist or not.
 	*
-	* @param 1 - date1, 2 - date2
+	* @param 1 - date_with_time1, 2 - date_with_time2
 	* @return true or false.
 	*/
-	bool check_date(int num_of_date);
+	bool check_date_with_time(int num_of_date_with_time);
 	/**
-	* Method set the date1 or date2. Checks existent of date with help of "check_date" method.
+	* Method set the date_with_time1 or date_with_time2. Checks existent of date_with_time with help of "check_date_with_time" method.
 	*
-	* @param 1 - date1, 2 - date2
+	* @param 1 - date_with_time1, 2 - date_with_time2
 	*/
-	void set_date(const Date& a, int num_of_date);
+	void set_date_with_time(const DateWithTime& a, int num_of_date_with_time);
 
 	/**
-	* Get the date from class TimeManagment.
-	* @param 0 - current date, 1 - date1, 2 - date2.
-	* @return date.
+	* Get the date_with_time from class TimeManagment.
+	* @param 0 - current date_with_time, 1 - date_with_time1, 2 - date_with_time2.
+	* @return date_with_time.
 	*/
-	Date get_date(int num_of_date);
+	DateWithTime get_date_with_time(int num_of_date_with_time);
 	/**
-	* Show the date from class TimeManagment.
-	* @param 0 - current date, 1 - date1, 2 - date2.
+	* Show the date_with_time from class TimeManagment.
+	* @param 0 - current date_with_time, 1 - date_with_time1, 2 - date_with_time2.
 	*/
-	void show_date(int num_of_date);
+	void show_date_with_time(int num_of_date_with_time);
 
 	/**
 	* Function that calculate ammount of days that we need to substract.
 	*
-	* @param date.
+	* @param date_with_time.
 	* @return ammount of days.
 	*/
-	int from_gregorian_to_julian(const Date& date);
+	int from_gregorian_to_julian(const DateWithTime& date_with_time);
 	/**
-	* Show current date, date1, date2 in julian calendar.
+	* Show current date_with_time, date_with_time1, date_with_time2 in julian calendar.
 	*/
 	void show_julian_calendar();
 
 	/**
-	* Method calculate number of weekday by date
+	* Method calculate number of weekday by date_with_time
 	*
-	* @param 0 - current date, 1 - date1, 2 - date2.
+	* @param 0 - current date_with_time, 1 - date_with_time1, 2 - date_with_time2.
 	* @return num of weekday.
 	*/
-	int get_weekday_of_date(int num_of_date);
+	int get_weekday_of_date_with_time(int num_of_date_with_time);
 	/**
-	* Method calculate num week of the date in month.
+	* Method calculate num week of the date_with_time in month.
 	*
-	* @param 0 - current date, 1 - date1, 2 - date2.
+	* @param 0 - current date_with_time, 1 - date_with_time1, 2 - date_with_time2.
 	* @return num of week.
 	*/
-	int week_in_month(int num_of_date);
+	int week_in_month(int num_of_date_with_time);
 	/**
-	* Method calculate num week of the date in year.
+	* Method calculate num week of the date_with_time in year.
 	*
-	* @param 0 - current date, 1 - date1, 2 - date2.
+	* @param 0 - current date_with_time, 1 - date_with_time1, 2 - date_with_time2.
 	* @return num of week.
 	*/
-	int week_in_year(int num_of_date);
+	int week_in_year(int num_of_date_with_time);
 	/**
-	* Show day of the week of current date, date1, date2.
+	* Show day of the week of current date_with_time, date_with_time1, date_with_time2.
 	*/
 	void day_of_the_week();
 	/**
-	* Show alternative variant of date represent.
+	* Show alternative variant of date_with_time represent.
 	*/
-	void alternative_insert_of_date(int num_of_date);
+	void alternative_insert_of_date_with_time(int num_of_date_with_time);
 
 	/**
 	* Overload of operator "=" for class TimeManagment.
@@ -165,10 +165,10 @@ public:
 	TimeManagment& operator=(TimeManagment right);
 
 private:
-	// First date which is set by the user.
-	Date date1;
-	// Second date which is set by the user.
-	Date date2;
+	// First date_with_time which is set by the user.
+	DateWithTime date_with_time1;
+	// Second date_with_time which is set by the user.
+	DateWithTime date_with_time2;
 
 	// Constant that names the week days.
 	const string WEEK_DAY[7] = { "Saturday" , "Sunday" , "Monday" , "Tuesday" ,

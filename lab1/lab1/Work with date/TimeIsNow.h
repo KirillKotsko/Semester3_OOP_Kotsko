@@ -1,10 +1,10 @@
-#pragma once
 /**
 *	@file TimeIsNow.h
 *	@author Kirill Kotsko
 *	@version 1.2
 */
 
+#pragma once
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include <ctime>
@@ -12,18 +12,18 @@
 #include <conio.h>
 #include <vector>
 #include <iomanip>
-#include "Date.h"
+#include "DateWithTime.h"
 
-using namespace std; 
+using namespace std;
 
 /**
 * @brief Current time
 *
-* The class represents methods for work with current date.
+* The class represents methods for work with current DateWithTime.
 */
 class TimeIsNow {
 public:
-	// Default constructor. Initializes variable by current date.
+	// Default constructor. Initializes variable by current DateWithTime.
 	TimeIsNow();
 	// Destructor.
 	~TimeIsNow();
@@ -33,14 +33,14 @@ public:
 	*/
 	void change_GMT();
 	/**
-	* Output current date.
+	* Output current DateWithTime.
 	*/
-	void show_current_date();
+	void show_current_date_with_time();
 	/**
-	* Method that get current date.
-	* @return current date
+	* Method that get current date_with_time.
+	* @return current date_with_time
 	*/
-	Date get_current_date();
+	DateWithTime get_current_date_with_time();
 
 private:
 
@@ -49,8 +49,8 @@ private:
 	*/
 	void update();
 
-	// Current date
-	Date current_date;
-	// Time zone behind which the current date is determined.
+	// Current date_with_time
+	DateWithTime current_date_with_time;
+	// Time zone behind which the current date_with_time is determined.
 	int GMT;
 };

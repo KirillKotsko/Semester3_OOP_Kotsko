@@ -1,6 +1,6 @@
 #pragma once
 /**
-*	@file DifferenceBetweenDate.h
+*	@file DifferenceBetweenDateWithTime.h
 *	@author Kirill Kotsko
 *	@version 1.2
 */
@@ -20,7 +20,7 @@ using namespace std;
 *
 * The class represents difference between two dates.
 */
-class DifferenceBetweenDate {
+class DifferenceBetweenDateWithTime {
 public:
 
 	// Variable that shows difference in days.
@@ -33,7 +33,7 @@ public:
 	int seconds;
 
 	// Default constructor. Initializes variables by 0.
-	DifferenceBetweenDate() : days(0), hour(0), minute(0), seconds(0) {}
+	DifferenceBetweenDateWithTime() : days(0), hour(0), minute(0), seconds(0) {}
 	/**
 	* @brief constructor
 	*
@@ -42,34 +42,34 @@ public:
 	* @param difference in minutes
 	* @param difference in seconds
 	*/
-	DifferenceBetweenDate(int day_, int hour_, int minute_, int second_) : days(day_), hour(hour_),
+	DifferenceBetweenDateWithTime(int day_, int hour_, int minute_, int second_) : days(day_), hour(hour_),
 		minute(minute_), seconds(second_) {}
 
 	/**
-	* Overload of operator "=" for class DifferenceBetweenDate.
+	* Overload of operator "=" for class DifferenceBetweenDateWithTime.
 	* @param Variable to copy data.
 	* @return Changed variable.
 	*/
-	DifferenceBetweenDate& operator=(const DifferenceBetweenDate& right);
+	DifferenceBetweenDateWithTime& operator=(const DifferenceBetweenDateWithTime& right);
 	/**
 	* Method that change variable "variant_of_output".
 	* @param Choice mode by user.
 	*/
 	void change_variant_of_output(int choice);
 	/**
-	* Overload of operator "==" for class Date.
+	* Overload of operator "==" for class DifferenceBetweenDateWithTime.
 	* @param Left hand side param for operator.
 	* @param Right hand side param for operator.
 	* @return True or false.
 	*/
-	friend bool operator==(const DifferenceBetweenDate& lhs, const DifferenceBetweenDate& rhs);
+	friend bool operator==(const DifferenceBetweenDateWithTime& lhs, const DifferenceBetweenDateWithTime& rhs);
 	/**
-	 * Overload of operator "<<" for date.
+	 * Overload of operator "<<" for DifferenceBetweenDateWithTime.
 	 * @param stream.
-	 * @param date thats outputs.
+	 * @param DifferenceBetweenDateWithTime thats outputs.
 	 * @return stream.
 	 */
-	friend ostream& operator<<(ostream& os, const DifferenceBetweenDate& date);
+	friend ostream& operator<<(ostream& os, const DifferenceBetweenDateWithTime& DateWithTime_);
 private:
 
 	/**

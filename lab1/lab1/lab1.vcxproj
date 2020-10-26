@@ -125,8 +125,8 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="UserInterface\UI.cpp" />
-    <ClCompile Include="Work with date\Date.cpp" />
-    <ClCompile Include="Work with date\DifferenceBetweenDate.cpp" />
+    <ClCompile Include="Work with date\DateWithTime.cpp" />
+    <ClCompile Include="Work with date\DifferenceBetweenDateWithTime.cpp" />
     <ClCompile Include="Work with date\TimeIsNow.cpp" />
     <ClCompile Include="Work with date\TimeManagment.cpp" />
   </ItemGroup>
@@ -142,7 +142,9 @@
     <ClInclude Include="Containers\Stack.h" />
     <ClInclude Include="UserInterface\UI.h" />
     <ClInclude Include="Work with date\Date.h" />
-    <ClInclude Include="Work with date\DifferenceBetweenDate.h" />
+    <ClInclude Include="Work with date\DateWithTime.h" />
+    <ClInclude Include="Work with date\DifferenceBetweenDateWithTime.h" />
+    <ClInclude Include="Work with date\Time.h" />
     <ClInclude Include="Work with date\TimeIsNow.h" />
     <ClInclude Include="Work with date\TimeManagment.h" />
     <ClInclude Include="Work with date\WorkWithDate.h" />

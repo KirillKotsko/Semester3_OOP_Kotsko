@@ -7,9 +7,9 @@
 void TestStack();
 void TestQueue();
 void TestDeque();
-void TestDateMinusDate();
-void TestDateAddDifference();
-void TestDateMinusDifference();
+void TestDateWithTimeMinusDateWithTime();
+void TestDateWithTimeAddDifference();
+void TestDateWithTimeMinusDifference();
 void TestWeekDay();
 void TestWeekInMonth();
 void TestWeekInYear();
