@@ -132,7 +132,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Containers\Containers.h" />
+    <ClInclude Include="Containers\ContainersLink.h" />
     <ClInclude Include="Containers\Deque.h" />
+    <ClInclude Include="Containers\IContainer.h" />
+    <ClInclude Include="Containers\IDeque.h" />
+    <ClInclude Include="Containers\IQueue.h" />
+    <ClInclude Include="Containers\IStack.h" />
     <ClInclude Include="Containers\Queue.h" />
     <ClInclude Include="Containers\Stack.h" />
     <ClInclude Include="UserInterface\UI.h" />

@@ -74,5 +74,20 @@
     <ClInclude Include="Work with date\WorkWithDate.h">
       <Filter>Work with date</Filter>
     </ClInclude>
+    <ClInclude Include="Containers\IContainer.h">
+      <Filter>Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="Containers\IStack.h">
+      <Filter>Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="Containers\IQueue.h">
+      <Filter>Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="Containers\IDeque.h">
+      <Filter>Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="Containers\ContainersLink.h">
+      <Filter>Containers</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

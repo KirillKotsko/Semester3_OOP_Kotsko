@@ -9,7 +9,7 @@
 using namespace std;
 
 TimeIsNow::TimeIsNow() {
-	GMT = 3;
+	GMT = 2;
 	update();
 }
 
@@ -17,7 +17,7 @@ TimeIsNow::~TimeIsNow() {}
 
 void TimeIsNow::update() {
 	time_t seconds = time(NULL);
-	seconds += 3600 * (-3) + GMT * 3600;
+	seconds += 3600 * (-2) + GMT * 3600;
 	tm* timeinfo = localtime(&seconds);
 	current_date.day = timeinfo->tm_mday;
 	current_date.month = timeinfo->tm_mon + 1;

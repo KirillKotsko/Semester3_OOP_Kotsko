@@ -108,7 +108,7 @@ void TestTimeManagmentInContainers() {
 		TimeManagment a;
 		a.set_date(Date({ 5,5,2020,12,0,0 }), 1);
 		a.set_date(Date({ 6,12,2020,13,59,11 }), 2);
-		test.push(a);
+		test.push_back(a);
 		ASSERT_EQUAL(test.size(), 1);
 		ASSERT_EQUAL(test.empty(), 0);
 		TimeManagment b = test.peek();
@@ -116,7 +116,7 @@ void TestTimeManagmentInContainers() {
 		ASSERT_EQUAL(b.get_date(2), Date({ 6,12,2020,13,59,11 }));
 		ASSERT_EQUAL(test.size(), 1);
 		ASSERT_EQUAL(test.empty(), 0);
-		TimeManagment c = test.pop();
+		TimeManagment c = test.pop_back();
 		ASSERT_EQUAL(c.get_date(1), Date({ 5,5,2020,12,0,0 }));
 		ASSERT_EQUAL(c.get_date(2), Date({ 6,12,2020,13,59,11 }));
 		ASSERT_EQUAL(test.size(), 0);
@@ -130,7 +130,7 @@ void TestTimeManagmentInContainers() {
 		TimeManagment a;
 		a.set_date(Date({ 5,5,2020,12,0,0 }), 1);
 		a.set_date(Date({ 6,12,2020,13,59,11 }), 2);
-		test.push(a);
+		test.push_back(a);
 		ASSERT_EQUAL(test.size(), 1);
 		ASSERT_EQUAL(test.empty(), 0);
 		TimeManagment b = test.front();
@@ -138,7 +138,7 @@ void TestTimeManagmentInContainers() {
 		ASSERT_EQUAL(b.get_date(2), Date({ 6,12,2020,13,59,11 }));
 		ASSERT_EQUAL(test.size(), 1);
 		ASSERT_EQUAL(test.empty(), 0);
-		TimeManagment c = test.pop();
+		TimeManagment c = test.pop_front();
 		ASSERT_EQUAL(c.get_date(1), Date({ 5,5,2020,12,0,0 }));
 		ASSERT_EQUAL(c.get_date(2), Date({ 6,12,2020,13,59,11 }));
 		ASSERT_EQUAL(test.size(), 0);

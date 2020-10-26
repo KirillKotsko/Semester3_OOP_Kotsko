@@ -1,4 +1,3 @@
-#pragma once
 /**
 *	@file Deque.h
 *	@author Kirill Kotsko
@@ -6,11 +5,12 @@
 */
 
 #pragma once
-#include <iostream>
-#include <exception>
+#include "Containers.h"
+#include "Stack.h"
+#include "Queue.h"
+#include "IDeque.h"
 
 using namespace std;
-
 
 /**
 * @brief Class Deque (double-ended queue)
@@ -19,150 +19,21 @@ using namespace std;
 * @tparam T type of data to storage in this container.
 */
 template <typename T>
-class Deque {
+class Deque : public IDeque<T>, public Stack<T>, public Queue<T> {
 public:
+
 	// Constructor
-	Deque(int a = 30);
-	// Deconstructor
-	~Deque();
+	Deque(int a = 30) : Container<T>(a) {}
 
-	/**
-	* Remove first element
-	*
-	* @return This element
-	*/
-	T pop_front();
-
-	/**
-	* Access first element
-	*
-	* @return This element
-	*/
-	const T& front();
-
-	/**
-	* Access top element
-	*
-	* @return This element
-	*/
-	const T& back();
-
-	/**
-	* Remove top element
-	*
-	* @return This element
-	*/
-	T pop_back();
-
-	/**
-	* Add element at the end
-	*/
-	void push_back(const T&);
-
-	/**
-	* Test whether container is empty
-	*
-	* @return true ore false
-	*/
-	bool empty();
-
-	/**
-	* Return maximum size of container
-	*
-	* @return max size
-	*/
-	int max_size() const;
-
-	/**
-	* Return current size of container
-	*
-	* @return size
-	*/
-	int size() const;
-
-	/**
-	* Add element at the begin
-	*/
-	void push_front(const T&);
-private:
+	void push_front(const T&) override;
+protected:
 	// Storage of data
-	T* data;
+	Container<T>::data;
 	// Current size of container
-	int current_size;
+	Container<T>::current_size;
 	// Maximal size of container
-	int maxsize;
+	Container<T>::maxsize;
 };
-
-template <typename T>
-Deque<T>::Deque(int size) : maxsize(size)
-{
-	current_size = 0;
-	data = new T[maxsize];
-}
-
-template <typename T>
-Deque<T>::~Deque()
-{
-	delete[] data;
-}
-
-template <typename T>
-bool Deque<T>::empty()
-{
-	return (current_size == 0) ? true : false;
-}
-
-template <typename T>
-int Deque<T>::size() const
-{
-	return current_size;
-}
-
-template <typename T>
-int Deque<T>::max_size() const
-{
-	return maxsize;
-}
-
-template <typename T>
-void Deque<T>::push_back(const T& value)
-{
-	if (current_size == maxsize) throw exception("Container is full!!!");
-	data[current_size++] = value;
-}
-
-template <typename T>
-T Deque<T>::pop_back()
-{
-	if (current_size == 0) throw exception("Container is empty!!!");
-	return data[--current_size];
-}
-
-template <typename T>
-const T& Deque<T>::front()
-{
-	if (current_size == 0) throw exception("Container is empty!!!");
-	return data[0];
-}
-
-template <typename T>
-const T& Deque<T>::back()
-{
-	if (current_size == 0) throw exception("Container is empty!!!");
-	return data[current_size - 1];
-}
-
-template <typename T>
-T Deque<T>::pop_front()
-{
-	if (current_size == 0) throw exception("Container is empty!!!");
-	T element = data[0];
-	for (int i = 0; i < current_size - 1; i++) {
-		data[i] = data[i + 1];
-	}
-	current_size--;
-	return element;
-}
 
 template <typename T>
 void Deque<T>::push_front(const T& value)

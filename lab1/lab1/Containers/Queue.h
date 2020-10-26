@@ -5,9 +5,8 @@
 */
 
 #pragma once
-#include <iostream>
-#include <exception>
-#include "Deque.h"
+#include "IQueue.h"
+#include "Containers.h"
 
 using namespace std;
 
@@ -18,59 +17,46 @@ using namespace std;
 * @tparam T type of data to storage in this container.
 */
 template <typename T>
-class Queue {
+class Queue : public IQueue<T>, virtual public Container<T> {
 public:
+
 	// Constructor
-	Queue(int a = 30) : queue(Deque<T>(a)) {}
+	Queue(int a = 30) : Container<T>(a) {}
 
-	/**
-	* Add element at the end
-	*/
-	void push(const T& value) { queue.push_back(value); };
-
-	/**
-	* Test whether container is empty
-	*
-	* @return true ore false
-	*/
-	bool empty() { return queue.empty(); };
-
-	/**
-	* Return maximum size of container
-	*
-	* @return max size
-	*/
-	int max_size() const { return queue.max_size(); };
-
-	/**
-	* Return current size of container
-	*
-	* @return size
-	*/
-	int size() const { return queue.size(); };
-
-	/**
-	* Remove first element
-	*
-	* @return This element
-	*/
-	T pop() { return queue.pop_front(); };
-
-	/**
-	* Access first element
-	*
-	* @return This element
-	*/
-	const T& front() { return queue.front(); };
-
-	/**
-	* Access top element
-	*
-	* @return This element
-	*/
-	const T& back() { return queue.back(); };
-
-private:
+	T pop_front() override;
+	const T& front() override;
+	const T& back() override;
+protected:
 	// Storage of data
-	Deque<T> queue;
+	Container<T>::data;
+	// Current size of container
+	Container<T>::current_size;
+	// Maximal size of container
+	Container<T>::maxsize;
 };
+
+template <typename T>
+const T& Queue<T>::front()
+{
+	if (current_size == 0) throw exception("Container is empty!!!");
+	return data[0];
+}
+
+template <typename T>
+const T& Queue<T>::back()
+{
+	if (current_size == 0) throw exception("Container is empty!!!");
+	return data[current_size - 1];
+}
+
+template <typename T>
+T Queue<T>::pop_front()
+{
+	if (current_size == 0) throw exception("Container is empty!!!");
+	T element = data[0];
+	for (int i = 0; i < current_size - 1; i++) {
+		data[i] = data[i + 1];
+	}
+	current_size--;
+	return element;
+}
