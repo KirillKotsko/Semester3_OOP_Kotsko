@@ -54,6 +54,10 @@ int main() {
 			catch (exception& ex) {
 				cout << ex.what() << endl;
 			}
+			if (cin.fail()) {
+				cin.clear();
+				cin.ignore(INT_MAX, '\n');
+			}
 			x.set_date_with_time(date_with_time, 1);
 			system("pause");
 			break;
