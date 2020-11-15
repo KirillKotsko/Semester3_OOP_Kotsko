@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>653</width>
+    <height>395</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -27,13 +27,87 @@
      <string>Add new link</string>
     </property>
    </widget>
+   <widget class="QComboBox" name="inpType">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>20</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>Pictures</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Book</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Document</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Audio</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Video</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Project</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Website</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QTableWidget" name="tbwLinks">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>60</y>
+      <width>561</width>
+      <height>271</height>
+     </rect>
+    </property>
+    <property name="columnCount">
+     <number>3</number>
+    </property>
+    <column/>
+    <column/>
+    <column/>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>20</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Refresh</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>653</width>
      <height>26</height>
     </rect>
    </property>

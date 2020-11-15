@@ -43,7 +43,7 @@ void AddLinkWindow::on_btnSave_clicked()
     Links link{ ui->inpType->currentText(),
                 ui->inpLink->text(),
                 ui->inpComment->toPlainText(),
-                ui->btnWebCheck->isTristate() };
+                ui->btnWebCheck->isChecked() };
     if ((link.link()).isEmpty()){
         msgBox.setText("There is no link.");
     }
@@ -59,7 +59,7 @@ void AddLinkWindow::on_btnSave_clicked()
         file.close();
         msgBox.setText("The link has added.");
         ui->inpLink->clear();
-        ui->inpType->clear();
+        ui->inpType->update();
         ui->inpComment->clear();
         ui->btnWebCheck->setTristate(0);
     }
