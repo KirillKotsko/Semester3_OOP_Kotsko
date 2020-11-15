@@ -2,8 +2,11 @@
 #define MAINWINDOW_H
 
 #include "Links/Links.h"
+#include "AddLink/addlinkwindow.h"
 
 #include <QMainWindow>
+#include <QFile>
+#include <QFileDialog>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -17,7 +20,11 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void on_btnAddLink_clicked();
+
 private:
+    AddLinkWindow addlinkwindow;
     Ui::MainWindow *ui;
 };
 #endif // MAINWINDOW_H

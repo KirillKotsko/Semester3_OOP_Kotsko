@@ -33,6 +33,9 @@ if(ANDROID)
     mainwindow.h
     Links/Links.h
     Links/Link.cpp
+    AddLink/addlinkwindow.cpp
+    AddLink/addlinkwindow.h
+    AddLink/addlinkwindow.ui
     mainwindow.ui
   )
 else()
@@ -42,6 +45,9 @@ else()
     mainwindow.h
     Links/Links.h
     Links/Link.cpp
+    AddLink/addlinkwindow.cpp
+    AddLink/addlinkwindow.h
+    AddLink/addlinkwindow.ui
     mainwindow.ui
   )
 endif()
