@@ -1,3 +1,8 @@
+/**
+*   @file Links.cpp
+*	@author Kirill Kotsko
+*	@version 1.1
+*/
 #include "Links/Links.h"
 
 QString Links::name() const

@@ -1,3 +1,8 @@
+/**
+*   @file detailswindow.cpp
+*	@author Kirill Kotsko
+*	@version 1.1
+*/
 #include "detailswindow.h"
 #include "ui_detailswindow.h"
 

@@ -1,3 +1,8 @@
+/**
+*   @file addlinkwindow.cpp
+*	@author Kirill Kotsko
+*	@version 1.1
+*/
 #include "addlinkwindow.h"
 #include "ui_addlinkwindow.h"
 

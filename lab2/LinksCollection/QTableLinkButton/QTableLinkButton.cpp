@@ -1,3 +1,8 @@
+/**
+*   @file QTableLinkButton.cpp
+*	@author Kirill Kotsko
+*	@version 1.1
+*/
 #include "QTableLinkButton/QTableLinkButton.h"
 
 QTableLinkButton::QTableLinkButton(QWidget *parent, const QString& _type_of_object, int _row) :
