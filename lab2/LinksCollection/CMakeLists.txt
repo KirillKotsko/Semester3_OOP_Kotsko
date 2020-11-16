@@ -36,6 +36,8 @@ if(ANDROID)
     AddLink/addlinkwindow.cpp
     AddLink/addlinkwindow.h
     AddLink/addlinkwindow.ui
+    QTableLinkButton/QTableLinkButton.h
+    QTableLinkButton/QTableLinkButton.cpp
     mainwindow.ui
   )
 else()
@@ -48,6 +50,8 @@ else()
     AddLink/addlinkwindow.cpp
     AddLink/addlinkwindow.h
     AddLink/addlinkwindow.ui
+    QTableLinkButton/QTableLinkButton.h
+    QTableLinkButton/QTableLinkButton.cpp
     mainwindow.ui
   )
 endif()

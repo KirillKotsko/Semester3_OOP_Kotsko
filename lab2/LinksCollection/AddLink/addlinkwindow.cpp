@@ -40,24 +40,27 @@ void AddLinkWindow::on_btnBack_clicked()
 void AddLinkWindow::on_btnSave_clicked()
 {
     QMessageBox msgBox;
-    Links link{ ui->inpType->currentText(),
+    Links link{ ui->inpName->text(),
+                ui->inpType->currentText(),
                 ui->inpLink->text(),
                 ui->inpComment->toPlainText(),
                 ui->btnWebCheck->isChecked() };
-    if ((link.link()).isEmpty()){
-        msgBox.setText("There is no link.");
+    if ((link.link()).isEmpty() || (link.name()).isEmpty()){
+        msgBox.setText("There is no link or name.");
     }
     else{
         QFile file{ link.type() + ".txt" };
         if (!file.open(QIODevice::WriteOnly | QIODevice::Append | QIODevice::Text))
             return;
         QTextStream stream(&file);
-        stream << link.link() << "\n"
+        stream << link.name() << "\n"
+            << link.link() << "\n"
             << link.type() << "\n"
             << link.is_web() << "\n"
             << link.comment() << "\n\n";
         file.close();
         msgBox.setText("The link has added.");
+        ui->inpName->clear();
         ui->inpLink->clear();
         ui->inpType->update();
         ui->inpComment->clear();

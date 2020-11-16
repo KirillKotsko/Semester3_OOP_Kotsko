@@ -23,9 +23,10 @@ void MainWindow::on_btnAddLink_clicked()
 void MainWindow::update_table()
 {
     ui->tbwLinks->clear();
-    ui->tbwLinks->setHorizontalHeaderLabels({ "Link",
+    ui->tbwLinks->setHorizontalHeaderLabels({  "Name",
+                                               "Link",
                                                "Web",
-                                               "Comment"});
+                                               "Details"});
     load_from_file();
 }
 
@@ -45,18 +46,21 @@ void MainWindow::load_from_file()
         QString line = in.readLine();
         switch (current_field) {
         case 0:
-            current_link.setLink(line);
+            current_link.setName(line);
             break;
         case 1:
-            current_link.setType(line);
+            current_link.setLink(line);
             break;
         case 2:
-            current_link.setIsWeb(line.toInt());
+            current_link.setType(line);
             break;
         case 3:
-            current_link.setComment(line);
+            current_link.setIsWeb(line.toInt());
             break;
         case 4:
+            current_link.setComment(line);
+            break;
+        case 5:
             current_field = -1;
             add_link_to_table(current_link);
             break;
@@ -71,16 +75,21 @@ void MainWindow::add_link_to_table(const Links& current_link)
     int rows = ui->tbwLinks->rowCount();
     ui->tbwLinks->setRowCount(rows + 1);
 
-    QTableWidgetItem* item = new QTableWidgetItem(current_link.link());
+    QTableWidgetItem* item = new QTableWidgetItem(current_link.name());
     ui->tbwLinks->setItem(rows, 0, item);
+
+    item = new QTableWidgetItem(current_link.link());
+    ui->tbwLinks->setItem(rows, 1, item);
 
     if (current_link.is_web()) item = new QTableWidgetItem("Yes");
     else item = new QTableWidgetItem("No");
-    ui->tbwLinks->setItem(rows, 1, item);
-
-    item = new QTableWidgetItem(current_link.comment());
     ui->tbwLinks->setItem(rows, 2, item);
 
+    QTableLinkButton* button = new QTableLinkButton(this, current_link.type(), rows);
+    button->setProperty("row", rows);
+    button->setText("Show");
+    connect(button, SIGNAL(clicked()), this, SLOT(slotGetInfo()));
+    ui->tbwLinks->setCellWidget(rows, 3, button);
 }
 
 void MainWindow::on_inpType_currentTextChanged(const QString &arg1)
@@ -91,4 +100,12 @@ void MainWindow::on_inpType_currentTextChanged(const QString &arg1)
 void MainWindow::on_pushButton_clicked()
 {
     update_table();
+}
+
+void MainWindow::slotGetInfo()
+{
+    QTableLinkButton *button = (QTableLinkButton*) sender();
+    QMessageBox msg;
+    msg.setText(QString::number(button->getRowInTable()));
+    msg.exec();
 }

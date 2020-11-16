@@ -1,5 +1,15 @@
 #include "Links/Links.h"
 
+QString Links::name() const
+{
+    return _name;
+}
+
+void Links::setName(const QString& name)
+{
+    _name = name;
+}
+
 QString Links::type() const
 {
     return _type;

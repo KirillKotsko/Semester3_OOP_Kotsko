@@ -3,7 +3,9 @@
 
 #include "Links/Links.h"
 #include "AddLink/addlinkwindow.h"
+#include "QTableLinkButton/QTableLinkButton.h"
 
+#include <QMessageBox>
 #include <QWidget>
 #include <QTextStream>
 #include <QMainWindow>
@@ -28,6 +30,8 @@ private slots:
     void on_inpType_currentTextChanged(const QString &arg1);
 
     void on_pushButton_clicked();
+
+    void slotGetInfo();
 
 private:
     AddLinkWindow addlinkwindow;
