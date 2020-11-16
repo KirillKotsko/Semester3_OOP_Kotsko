@@ -1,3 +1,4 @@
+#pragma once
 #ifndef ADDLINKWINDOW_H
 #define ADDLINKWINDOW_H
 
@@ -5,6 +6,8 @@
 #include <QFile>
 #include <QFileDialog>
 #include <QTextStream>
+#include <QMessageBox>
+#include <QDesktopServices>
 #include "Links/Links.h"
 
 namespace Ui {
@@ -18,6 +21,7 @@ class AddLinkWindow : public QWidget
 public:
     explicit AddLinkWindow(QWidget *parent = nullptr);
     ~AddLinkWindow();
+    bool checkUrl(const QUrl &url);
 
 private slots:
 
@@ -28,6 +32,8 @@ private slots:
     void on_btnBack_clicked();
 
     void on_btnSave_clicked();
+
+    void on_inpType_activated(const QString &arg1);
 
 private:
     Ui::AddLinkWindow *ui;

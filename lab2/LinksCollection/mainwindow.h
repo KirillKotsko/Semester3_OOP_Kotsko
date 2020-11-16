@@ -1,9 +1,11 @@
+#pragma once
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
 #include "Links/Links.h"
-#include "AddLink/addlinkwindow.h"
+#include "AddLinkWindow/addlinkwindow.h"
 #include "QTableLinkButton/QTableLinkButton.h"
+#include "DetailsWindow/detailswindow.h"
 
 #include <QMessageBox>
 #include <QWidget>
@@ -29,12 +31,13 @@ private slots:
 
     void on_inpType_currentTextChanged(const QString &arg1);
 
-    void on_pushButton_clicked();
+    void on_btnRefresh_clicked();
 
-    void slotGetInfo();
+    void slotShowLink();
 
 private:
     AddLinkWindow addlinkwindow;
+    DetailsWindow detailswindow;
     Ui::MainWindow *ui;
 
     void load_from_file();

@@ -1,3 +1,4 @@
+#pragma once
 #ifndef QTABLELINKBUTTON_H
 #define QTABLELINKBUTTON_H
 

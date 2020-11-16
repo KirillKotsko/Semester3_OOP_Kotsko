@@ -1,6 +1,5 @@
 #include "addlinkwindow.h"
 #include "ui_addlinkwindow.h"
-#include <QMessageBox>
 
 AddLinkWindow::AddLinkWindow(QWidget *parent) :
     QWidget(parent),
@@ -45,10 +44,16 @@ void AddLinkWindow::on_btnSave_clicked()
                 ui->inpLink->text(),
                 ui->inpComment->toPlainText(),
                 ui->btnWebCheck->isChecked() };
-    if ((link.link()).isEmpty() || (link.name()).isEmpty()){
+    if ((link.link()).isEmpty() || (link.name()).isEmpty())
+    {
         msgBox.setText("There is no link or name.");
     }
-    else{
+    else if (!link.is_web() && QFile::exists(link.link()) == false)
+    {
+        msgBox.setText("Such link is invalid.");
+    }
+    else
+    {
         QFile file{ link.type() + ".txt" };
         if (!file.open(QIODevice::WriteOnly | QIODevice::Append | QIODevice::Text))
             return;
@@ -67,4 +72,10 @@ void AddLinkWindow::on_btnSave_clicked()
         ui->btnWebCheck->setTristate(0);
     }
     msgBox.exec();
+}
+
+
+void AddLinkWindow::on_inpType_activated(const QString &arg1)
+{
+    if (ui->inpType->currentText() == "Website" && !(ui->btnWebCheck->isChecked())) ui->btnWebCheck->click();
 }

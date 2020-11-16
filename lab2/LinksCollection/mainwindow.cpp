@@ -88,7 +88,7 @@ void MainWindow::add_link_to_table(const Links& current_link)
     QTableLinkButton* button = new QTableLinkButton(this, current_link.type(), rows);
     button->setProperty("row", rows);
     button->setText("Show");
-    connect(button, SIGNAL(clicked()), this, SLOT(slotGetInfo()));
+    connect(button, SIGNAL(clicked()), this, SLOT(slotShowLink()));
     ui->tbwLinks->setCellWidget(rows, 3, button);
 }
 
@@ -97,15 +97,16 @@ void MainWindow::on_inpType_currentTextChanged(const QString &arg1)
     update_table();
 }
 
-void MainWindow::on_pushButton_clicked()
+void MainWindow::on_btnRefresh_clicked()
 {
     update_table();
 }
 
-void MainWindow::slotGetInfo()
+void MainWindow::slotShowLink()
 {
     QTableLinkButton *button = (QTableLinkButton*) sender();
-    QMessageBox msg;
-    msg.setText(QString::number(button->getRowInTable()));
-    msg.exec();
+    detailswindow.setRowInTable(button->getRowInTable());
+    detailswindow.setTypeOfObjects(button->getTypeOfObject());
+    detailswindow.setLink();
+    detailswindow.show();
 }

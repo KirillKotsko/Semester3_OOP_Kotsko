@@ -33,11 +33,14 @@ if(ANDROID)
     mainwindow.h
     Links/Links.h
     Links/Link.cpp
-    AddLink/addlinkwindow.cpp
-    AddLink/addlinkwindow.h
-    AddLink/addlinkwindow.ui
+    AddLinkWindow/addlinkwindow.cpp
+    AddLinkWindow/addlinkwindow.h
+    AddLinkWindow/addlinkwindow.ui
     QTableLinkButton/QTableLinkButton.h
     QTableLinkButton/QTableLinkButton.cpp
+    DetailsWindow/detailswindow.ui
+    DetailsWindow/detailswindow.h
+    DetailsWindow/detailswindow.cpp
     mainwindow.ui
   )
 else()
@@ -47,11 +50,14 @@ else()
     mainwindow.h
     Links/Links.h
     Links/Link.cpp
-    AddLink/addlinkwindow.cpp
-    AddLink/addlinkwindow.h
-    AddLink/addlinkwindow.ui
+    AddLinkWindow/addlinkwindow.cpp
+    AddLinkWindow/addlinkwindow.h
+    AddLinkWindow/addlinkwindow.ui
     QTableLinkButton/QTableLinkButton.h
     QTableLinkButton/QTableLinkButton.cpp
+    DetailsWindow/detailswindow.ui
+    DetailsWindow/detailswindow.h
+    DetailsWindow/detailswindow.cpp
     mainwindow.ui
   )
 endif()
