@@ -4,6 +4,7 @@
 
 #include <QPushButton>
 #include <QString>
+#include "Links/Links.h"
 
 class QTableLinkButton : public QPushButton
 {
@@ -13,12 +14,16 @@ public:
     ~QTableLinkButton();
     int getRowInTable();
     QString getTypeOfObject();
+    void setLinkInRow(Links _link);
+    Links getLinkInRow();
+
 
 public slots:
 
 private:
     QString type_of_objects;
     int row_in_table;
+    Links link_in_row;
 };
 
 #endif // QTABLELINKBUTTON_H

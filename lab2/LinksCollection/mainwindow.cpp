@@ -1,6 +1,8 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 
+using namespace std;
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -26,7 +28,8 @@ void MainWindow::update_table()
     ui->tbwLinks->setHorizontalHeaderLabels({  "Name",
                                                "Link",
                                                "Web",
-                                               "Details"});
+                                               "Details",
+                                               "List"});
     load_from_file();
 }
 
@@ -90,6 +93,13 @@ void MainWindow::add_link_to_table(const Links& current_link)
     button->setText("Show");
     connect(button, SIGNAL(clicked()), this, SLOT(slotShowLink()));
     ui->tbwLinks->setCellWidget(rows, 3, button);
+
+    QTableLinkButton* button1 = new QTableLinkButton(this, current_link.type(), rows);
+    button1->setProperty("row", rows);
+    button1->setText("Add");
+    button1->setLinkInRow(current_link);
+    connect(button1, SIGNAL(clicked()), this, SLOT(slotAddLinkToList()));
+    ui->tbwLinks->setCellWidget(rows, 4, button1);
 }
 
 void MainWindow::on_inpType_currentTextChanged(const QString &arg1)
@@ -109,4 +119,40 @@ void MainWindow::slotShowLink()
     detailswindow.setTypeOfObjects(button->getTypeOfObject());
     detailswindow.setLink();
     detailswindow.show();
+}
+
+void MainWindow::slotAddLinkToList()
+{
+    QTableLinkButton *button = (QTableLinkButton*) sender();
+    Links tmp = button->getLinkInRow();
+    list_of_links.push_back(tmp);
+    QMessageBox msg;
+    msg.setText("Link has been added to list.");
+    msg.exec();
+}
+
+void MainWindow::on_btnClearList_clicked()
+{
+    list_of_links.clear();
+    QMessageBox msg;
+    msg.setText("List is empty.");
+    msg.exec();
+}
+
+void MainWindow::on_btnSaveList_clicked()
+{
+    QString fileName = QFileDialog::getSaveFileName( 0,"Save list: ","C:\\", "(*.txt);;(*.docx)" );
+    QFile file{ fileName };
+    if (!file.open(QIODevice::WriteOnly | QIODevice::Append | QIODevice::Text))
+        return;
+    int i = 1;
+    QTextStream stream(&file);
+    for (auto x : list_of_links)
+    {
+        stream << i << ". " << x.name() << " ("
+            << x.type() << ") - "
+            << x.link() << ". " << "\n\n";
+        i++;
+    }
+    file.close();
 }

@@ -12,6 +12,7 @@
 #include <QTextStream>
 #include <QMainWindow>
 #include <QFile>
+#include <vector>
 #include <QFileDialog>
 
 QT_BEGIN_NAMESPACE
@@ -35,10 +36,17 @@ private slots:
 
     void slotShowLink();
 
+    void slotAddLinkToList();
+
+    void on_btnClearList_clicked();
+
+    void on_btnSaveList_clicked();
+
 private:
     AddLinkWindow addlinkwindow;
     DetailsWindow detailswindow;
     Ui::MainWindow *ui;
+    std::vector<Links> list_of_links;
 
     void load_from_file();
     void update_table();

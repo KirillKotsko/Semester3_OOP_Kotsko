@@ -20,3 +20,13 @@ QString QTableLinkButton::getTypeOfObject()
 {
     return type_of_objects;
 }
+
+void QTableLinkButton::setLinkInRow(Links _link)
+{
+    link_in_row = _link;
+}
+
+Links QTableLinkButton::getLinkInRow()
+{
+    return link_in_row;
+}
