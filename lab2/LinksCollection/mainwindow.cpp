@@ -24,6 +24,10 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_btnAddLink_clicked()
 {
+    addlinkwindow.setMaximumWidth(addlinkwindow.width());
+    addlinkwindow.setMaximumHeight(addlinkwindow.height());
+    addlinkwindow.setMinimumWidth(addlinkwindow.width());
+    addlinkwindow.setMinimumHeight(addlinkwindow.height());
     addlinkwindow.show();
 }
 
@@ -123,6 +127,10 @@ void MainWindow::slotShowLink()
     detailswindow.setRowInTable(button->getRowInTable());
     detailswindow.setTypeOfObjects(button->getTypeOfObject());
     detailswindow.setLink();
+    detailswindow.setMaximumWidth(detailswindow.width());
+    detailswindow.setMaximumHeight(detailswindow.height());
+    detailswindow.setMinimumWidth(detailswindow.width());
+    detailswindow.setMinimumHeight(detailswindow.height());
     detailswindow.show();
 }
 
