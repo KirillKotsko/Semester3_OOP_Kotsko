@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>749</width>
-    <height>434</height>
+    <width>723</width>
+    <height>462</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,7 +18,7 @@
     <property name="geometry">
      <rect>
       <x>130</x>
-      <y>20</y>
+      <y>60</y>
       <width>101</width>
       <height>31</height>
      </rect>
@@ -31,7 +31,7 @@
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>20</y>
+      <y>60</y>
       <width>91</width>
       <height>31</height>
      </rect>
@@ -76,7 +76,7 @@
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>60</y>
+      <y>100</y>
       <width>671</width>
       <height>301</height>
      </rect>
@@ -94,7 +94,7 @@
     <property name="geometry">
      <rect>
       <x>240</x>
-      <y>20</y>
+      <y>60</y>
       <width>91</width>
       <height>31</height>
      </rect>
@@ -107,7 +107,7 @@
     <property name="geometry">
      <rect>
       <x>610</x>
-      <y>20</y>
+      <y>60</y>
       <width>93</width>
       <height>28</height>
      </rect>
@@ -120,7 +120,7 @@
     <property name="geometry">
      <rect>
       <x>502</x>
-      <y>20</y>
+      <y>60</y>
       <width>101</width>
       <height>28</height>
      </rect>
@@ -129,13 +129,36 @@
      <string>Save list in file</string>
     </property>
    </widget>
+   <widget class="QLineEdit" name="inpSearch">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>30</y>
+      <width>571</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnSearch">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>30</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Search</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>749</width>
+     <width>723</width>
      <height>26</height>
     </rect>
    </property>

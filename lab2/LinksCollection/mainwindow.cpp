@@ -111,6 +111,35 @@ void MainWindow::add_link_to_table(const Links& current_link)
     ui->tbwLinks->setCellWidget(rows, 4, button1);
 }
 
+void MainWindow::add_link_to_table_search_edition(const Links& current_link, int row_in_real_table)
+{
+    int rows = ui->tbwLinks->rowCount();
+    ui->tbwLinks->setRowCount(rows + 1);
+
+    QTableWidgetItem* item = new QTableWidgetItem(current_link.name());
+    ui->tbwLinks->setItem(rows, 0, item);
+
+    item = new QTableWidgetItem(current_link.link());
+    ui->tbwLinks->setItem(rows, 1, item);
+
+    if (current_link.is_web()) item = new QTableWidgetItem("Yes");
+    else item = new QTableWidgetItem("No");
+    ui->tbwLinks->setItem(rows, 2, item);
+
+    QTableLinkButton* button = new QTableLinkButton(this, current_link.type(), row_in_real_table);
+    button->setProperty("row", rows);
+    button->setText("Show");
+    connect(button, SIGNAL(clicked()), this, SLOT(slotShowLink()));
+    ui->tbwLinks->setCellWidget(rows, 3, button);
+
+    QTableLinkButton* button1 = new QTableLinkButton(this, current_link.type(), row_in_real_table);
+    button1->setProperty("row", rows);
+    button1->setText("Add");
+    button1->setLinkInRow(current_link);
+    connect(button1, SIGNAL(clicked()), this, SLOT(slotAddLinkToList()));
+    ui->tbwLinks->setCellWidget(rows, 4, button1);
+}
+
 void MainWindow::on_inpType_currentTextChanged(const QString &arg1)
 {
     update_table();
@@ -154,7 +183,7 @@ void MainWindow::on_btnClearList_clicked()
 
 void MainWindow::on_btnSaveList_clicked()
 {
-    QString fileName = QFileDialog::getSaveFileName( 0,"Save list: ","C:\\", "(*.txt);;(*.docx)" );
+    QString fileName = QFileDialog::getSaveFileName( 0,"Save list: ","C:\\", "(*.txt)" );
     QFile file{ fileName };
     if (!file.open(QIODevice::WriteOnly | QIODevice::Append | QIODevice::Text))
         return;
@@ -168,4 +197,74 @@ void MainWindow::on_btnSaveList_clicked()
         i++;
     }
     file.close();
+}
+
+bool MainWindow::isSubString(const QString &first, const QString &second) {
+    string s = first.toLocal8Bit().constData();
+    string t = second.toLocal8Bit().constData();
+    if(t.length() > s.length() || t.length() == 0)
+            return false;
+
+        for (int i = 0; i < s.length(); i++){
+            int j = 0;
+            if(s[i] == t[j]){
+                int k = i;
+                while (s[i] == t[j] && j < t.length()){
+                    j++;
+                    i++;
+                }
+                if (j == t.length())
+                    return true;
+                else
+                    i = k;
+            }
+        }
+        return false;
+}
+
+void MainWindow::on_btnSearch_clicked()
+{
+    QString text_to_search = ui->inpSearch->text();
+    vector<QString> file_name = {"Pictures", "Book", "Document", "Audio", "Video", "Project", "Website"};
+    ui->tbwLinks->clearContents();
+    ui->tbwLinks->setRowCount(0);
+    for (auto x : file_name){
+        QFile file{ x + ".txt" };
+        if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+            return;
+        QTextStream in(&file);
+        int current_field = 0;
+        Links current_link;
+        int i = 0;
+        while (!in.atEnd())
+        {
+            QString line = in.readLine();
+            switch (current_field) {
+            case 0:
+                current_link.setName(line);
+                break;
+            case 1:
+                current_link.setLink(line);
+                break;
+            case 2:
+                current_link.setType(line);
+                break;
+            case 3:
+                current_link.setIsWeb(line.toInt());
+                break;
+            case 4:
+                current_link.setComment(line);
+                break;
+            case 5:
+                current_field = -1;
+                if (isSubString(current_link.name(), text_to_search) || isSubString(current_link.comment(), text_to_search)) {
+                    add_link_to_table_search_edition(current_link, i);
+                }
+                i++;
+                break;
+            }
+            current_field++;
+        }
+        file.close();
+    }
 }

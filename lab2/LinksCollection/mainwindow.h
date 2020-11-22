@@ -19,6 +19,7 @@
 #include <QFile>
 #include <vector>
 #include <QFileDialog>
+#include <algorithm>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -85,6 +86,11 @@ private slots:
      */
     void on_btnSaveList_clicked();
 
+    /**
+     * @brief Search link by text "inpSearch"
+     */
+    void on_btnSearch_clicked();
+
 private:
 
     /**
@@ -119,5 +125,20 @@ private:
      * @param link
      */
     void add_link_to_table(const Links& link);
+
+    /**
+     * @brief add link to table search edition
+     * @param current_link
+     * @param row in real table
+     */
+    void add_link_to_table_search_edition(const Links& current_link, int row_in_real_table);
+
+    /**
+     * @brief Check if t is substring of s or not
+     * @param s
+     * @param t
+     * @return true or false
+     */
+    bool isSubString(const QString &s, const QString &t);
 };
 #endif // MAINWINDOW_H
