@@ -16,15 +16,20 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    FunctionGraph/functiongraph.cpp \
+    GraphRepresent/graphrepresent.cpp \
     main.cpp \
     mainwindow.cpp \
     qcustomplot.cpp
 
 HEADERS += \
+    FunctionGraph/functiongraph.h \
+    GraphRepresent/graphrepresent.h \
     mainwindow.h \
     qcustomplot.h
 
 FORMS += \
+    GraphRepresent/graphrepresent.ui \
     mainwindow.ui
 
 # Default rules for deployment.
