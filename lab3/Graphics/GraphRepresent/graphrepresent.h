@@ -2,6 +2,7 @@
 #define GRAPHREPRESENT_H
 
 #include <QWidget>
+#include "./qcustomplot.h"
 
 namespace Ui {
 class GraphRepresent;

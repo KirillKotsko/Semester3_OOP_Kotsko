@@ -37,7 +37,7 @@ double FunctionGraph::EvaluateFunc(double x)
         return c*(log(b*x)/log(a));
         break;
     case 4:
-        return (sin(a*x)+ cos(b*x))/c;
+        return (sin(a*x)+cos(b*x))/c;
         break;
     case 5:
         return sqrt((pow(a,2)*pow(b,2)-pow(b,2)*pow(x,2))/pow(a,2));
