@@ -1,3 +1,8 @@
+/**
+*   @file functiongraph.cpp
+*	@author Kirill Kotsko
+*	@version 1.1
+*/
 #include "functiongraph.h"
 
 void FunctionGraph::setA(double _a)

@@ -1,3 +1,8 @@
+/**
+*   @file main.cpp
+*	@author Kirill Kotsko
+*	@version 1.1
+*/
 #include "mainwindow.h"
 
 #include <QApplication>

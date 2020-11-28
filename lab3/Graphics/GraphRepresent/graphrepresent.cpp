@@ -1,3 +1,8 @@
+/**
+*   @file graphrepresent.cpp
+*	@author Kirill Kotsko
+*	@version 1.1
+*/
 #include "graphrepresent.h"
 #include "ui_graphrepresent.h"
 
