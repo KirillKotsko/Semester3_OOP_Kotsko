@@ -128,6 +128,9 @@ GraphRepresent::~GraphRepresent()
 
 void GraphRepresent::on_btnExit_clicked()
 {
-    verticalLine->~QCPCurve();
+    ui->customPlot->clearGraphs();
+    ui->customPlot->clearItems();
+    ui->customPlot->clearFocus();
+    ui->customPlot->clearPlottables();
     close();
 }
