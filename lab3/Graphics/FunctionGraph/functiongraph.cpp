@@ -20,6 +20,11 @@ void FunctionGraph::setFunctionId(int _function_id)
     function_id = _function_id;
 }
 
+int FunctionGraph::getFunctionId()
+{
+    return function_id;
+}
+
 double FunctionGraph::EvaluateFunc(double x)
 {
     switch (function_id)

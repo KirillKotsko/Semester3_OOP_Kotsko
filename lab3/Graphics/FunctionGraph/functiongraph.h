@@ -15,6 +15,7 @@ public:
     void setFunctionId(int _function_id);
 
     double EvaluateFunc(double x);
+    int getFunctionId();
 
 private:
     double a,b,c;

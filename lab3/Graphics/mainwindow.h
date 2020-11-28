@@ -38,6 +38,8 @@ private slots:
 
     void on_btnShow_clicked();
 
+    void on_btnExit_clicked();
+
 private:
     Ui::MainWindow *ui;
     FunctionGraph func;
