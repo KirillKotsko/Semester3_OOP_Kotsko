@@ -1,9 +1,9 @@
 /***************************************************************
  * Name:      EncAntApp.cpp
  * Purpose:   Code for Application Class
- * Author:    hhh ()
- * Created:   2019-03-02
- * Copyright: hhh ()
+ * Author:    Kirill Kotsko ()
+ * Created:   2020-12-01
+ * Copyright: Kirill Kotsko ()
  * License:
  **************************************************************/
 
